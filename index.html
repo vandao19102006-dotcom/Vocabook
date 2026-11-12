@@ -229,12 +229,94 @@ input.f:disabled{opacity:.7}
 .card p:last-child{margin-bottom:0}
 .card .t{font-weight:700;font-size:14px;margin-bottom:8px;display:block}
 
+/* chi tiết phát âm + cửa sổ luyện từ */
+.dv{line-height:1.95;font-size:14px;overflow-wrap:anywhere}
+.del{color:var(--bad)}.ins{color:var(--ok);font-weight:600}
+.why{display:block;font-size:12px;color:var(--mut);background:var(--tint);border-radius:10px;padding:8px 10px;margin:4px 0}
+.pw{font:inherit;font-weight:600;padding:0}
+.w0{border-bottom:2px dotted var(--mut)}.w1{color:var(--warn);border-bottom:2px solid var(--warn)}.w2{color:var(--bad);border-bottom:2px solid var(--bad)}
+.ipc{font:600 11px ui-monospace,Menlo,monospace;background:var(--okbg);color:var(--ok);border-radius:6px;padding:1px 6px}
+.lgd{display:flex;gap:14px;flex-wrap:wrap;font-size:11px;color:var(--mut);margin-top:14px}
+.lgd i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+.ov{position:fixed;inset:0;z-index:40;background:rgba(10,12,30,.55);display:grid;place-items:center;padding:20px}
+.mdl{position:relative;width:min(100%,420px);max-height:90vh;overflow:auto;background:var(--card);border:1px solid var(--bd);border-radius:20px;padding:22px 18px 18px;text-align:center}
+.mx{position:absolute;right:6px;top:6px}
+.pbox{background:var(--tint);border-radius:14px;padding:12px;margin:14px 0}
+.pr{display:flex;align-items:center;gap:10px;margin-top:8px}
+.pr>span{width:40px;text-align:left;color:var(--mut);font-weight:700;font-size:10.5px}
+.pr>div{flex:1;display:flex;flex-wrap:wrap;gap:8px 10px;justify-content:center}
+.pr b{font:600 17px ui-monospace,Menlo,monospace}
+.po{color:var(--ok)}.px{color:var(--bad);text-decoration:underline wavy}
+.seg.in{margin:0 0 12px}
+
 /* ---------- nav ---------- */
 nav{position:fixed;z-index:20;left:50%;transform:translateX(-50%);bottom:0;width:min(100%,520px);background:var(--card);border-top:1px solid var(--bd);display:flex;gap:2px;padding:6px 8px calc(6px + env(safe-area-inset-bottom,0px))}
 nav button{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:7px 2px;border-radius:12px;color:var(--mut);font-size:10px;font-weight:600}
 nav button.on{color:var(--pri);background:var(--tint)}
 
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* ---------- shadowing ---------- */
+.shbar{display:flex;align-items:center;gap:8px;padding:14px 16px 8px}
+.shtt{flex:1;min-width:0;font-size:14.5px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.shcnt{font-size:11.5px;color:var(--mut);font-weight:600;white-space:nowrap}
+.shch{height:34px;padding:0 12px;border-radius:17px;border:1px solid var(--bd);background:var(--card);font-size:12px;font-weight:600;display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+.shch.on{background:var(--tint);border-color:var(--tintb);color:var(--pri)}
+#shbox{position:relative;margin:0 16px;aspect-ratio:16/9;background:#000;border-radius:16px;overflow:hidden}
+#shbox iframe,#shyt{position:absolute;inset:0;width:100%;height:100%;border:0}
+#shov{position:absolute;left:8px;right:8px;bottom:10px;text-align:center;pointer-events:none;z-index:2}
+#shov span{background:rgba(0,0,0,.74);color:#fff;font-weight:600;font-size:13px;line-height:1.7;padding:2px 8px;border-radius:6px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.sherr{position:absolute;inset:0;z-index:3;display:grid;place-items:center;padding:20px;text-align:center;background:rgba(0,0,0,.78);color:#fff;font-weight:600;font-size:13px}
+.shctl{display:flex;justify-content:center;align-items:center;gap:16px;padding:14px 16px 4px}
+.shcb{width:46px;height:46px;border-radius:50%;border:1px solid var(--tintb);background:var(--card);color:var(--pri);display:grid;place-items:center}
+.shcb:disabled{opacity:.4}
+.shcb.big{width:58px;height:58px;background:var(--btn);color:#fff;border:0;box-shadow:0 6px 16px rgba(91,82,200,.25)}
+.shcb.rec{background:var(--bad)}
+.shrb{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px 18px;padding:8px 16px 0;font-size:12.5px;font-weight:600;text-align:center}
+.shdot{width:9px;height:9px;border-radius:50%;background:var(--bad);animation:shp 1s infinite}
+@keyframes shp{50%{opacity:.25}}
+.shres{margin:10px 16px 0;padding:14px;background:var(--card);border:1px solid var(--bd);border-radius:16px;text-align:center}
+.shscore{font-size:34px;font-weight:800;line-height:1.1}.shscore small{font-size:13px;font-weight:600;color:var(--mut)}
+.shscore.g,.shsc.g{color:var(--ok)}.shscore.y,.shsc.y{color:var(--warn)}.shscore.r,.shsc.r{color:var(--bad)}
+.shwd{margin-top:8px;font-size:15px;line-height:1.9}
+.shwd b{cursor:pointer;padding:1px 4px;border-radius:6px;font-weight:600}
+.shwd b.s2{background:var(--badbg);color:var(--bad)}.shwd b.s1{background:var(--warnbg);color:var(--warn)}.shwd b.s0{text-decoration:underline dotted var(--mut)}
+.shl{padding:14px 12px 24px}
+.shi{padding:12px 14px;border-radius:14px;cursor:pointer;margin-bottom:2px}
+.shi.on{background:var(--tint)}
+.shen{font-size:14.5px;font-weight:600;line-height:1.45}.shi.on .shen{font-size:16px}
+.shsc{margin-left:8px;font-size:11px;font-weight:700}
+.shvi{font-size:12.5px;color:var(--mut);margin-top:3px;font-weight:500}.shvi:empty{display:none}
+.shl.notr .shvi{display:none}
+.shcard{display:flex;align-items:center;gap:12px;padding:12px;cursor:pointer}
+.shth{width:96px;aspect-ratio:16/9;object-fit:cover;border-radius:10px;background:var(--seg);flex:none}
+.shin{flex:1;min-width:0}
+.shct{display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:13.5px;line-height:1.35}
+.shsep{display:flex;align-items:center;gap:10px;margin:16px 0 12px;color:var(--mut);font-size:11.5px;font-weight:600}
+.shsep:before,.shsep:after{content:"";flex:1;height:1px;background:var(--bd)}
+.shsw{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:14px;font-size:13px;font-weight:600}
+.shsw small{display:block;font-size:11.5px;font-weight:500;margin-top:2px}
+.shsw input{width:20px;height:20px;accent-color:var(--pri);flex:none}
+
+/* Speaking: tạm dừng, chọn câu, lịch sử */
+.mrow{display:flex;justify-content:center;align-items:center;gap:22px;margin-bottom:14px}.mrow .mic{margin:0}
+.mic.pz{width:56px;height:56px;background:var(--tint);color:var(--pri);box-shadow:none;border:1px solid var(--tintb)}
+.mic.rec.ps{animation:none;opacity:.9}.tm.ps{color:var(--warn)}
+.pqs{max-height:340px;overflow:auto;margin-top:10px}
+.pqi{display:flex;gap:10px;align-items:flex-start;justify-content:space-between;width:100%;text-align:left;padding:11px 12px;border-radius:12px;border:1px solid var(--bd);background:var(--card);color:var(--tx);margin-bottom:8px;font-size:13px}
+.pqi.on{border-color:var(--pri);background:var(--tint)}
+.pqi .q{display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;flex:1;min-width:0}
+.pqi .pill{flex:none}
+.qh{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:12px;color:var(--mut);margin:-4px 2px 14px}
+.hgb{display:flex;justify-content:space-between;align-items:center;gap:12px;width:100%;text-align:left;color:var(--tx)}
+.hgq{font-size:13.5px;font-weight:600;margin:6px 0 4px;display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.hga{margin-top:10px;border-top:1px solid var(--bd)}
+.plw{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.plb{width:36px;height:36px;border-radius:50%;background:var(--btn);color:#fff;display:grid;place-items:center;flex:none}
+.plw input[type=range]{flex:1;min-width:0;accent-color:var(--pri)}
+.plt{font-size:11.5px;color:var(--mut);font-variant-numeric:tabular-nums;flex:none}
+.wcn{font-size:12px;margin:6px 2px 14px;font-weight:600}.wcn.ok{color:var(--ok)}.wcn.w{color:var(--warn)}
+.wrq{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px}
 </style>
 </head>
 <body>
@@ -277,7 +359,13 @@ const IC={
  shield:'<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/>',
  arrow:'<path d="M5 12h14M12 5l7 7-7 7"/>',
  sort:'<path d="m3 16 4 4 4-4M7 20V4M21 8l-4-4-4 4M17 4v16"/>',
- trash:'<path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6M10 11v6M14 11v6"/>'
+ play:'<path d="M7 4v16l13-8z" fill="currentColor"/>',
+pause:'<rect x="6" y="5" width="4" height="14" rx="1" fill="currentColor"/><rect x="14" y="5" width="4" height="14" rx="1" fill="currentColor"/>',
+trash:'<path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6M10 11v6M14 11v6"/>',
+head:'<path d="M3 14v-2a9 9 0 0 1 18 0v2"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/>',
+back:'<path d="m15 18-6-6 6-6"/>',
+chevup:'<path d="m18 15-6-6-6 6"/>',
+lang:'<path d="m5 8 6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6"/>'
 };
 const ic=(n,s=18)=>`<svg class="ic" width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${IC[n]}</svg>`;
 
@@ -299,19 +387,26 @@ const hasEx=w=>!!(w.ex&&new RegExp(reEsc(w.w),'i').test(w.ex));
 let tab='look',draft=null,msg='',busy=false,qv='',editing=false,dnb=null;
 let fc={q:[],i:0,f:false,due:false},ex=null,exMode='mc',exErr='';
 let viewNb='all',nbq='',nbSort='new',nbF=-1,openW=null,nbAdd=false;
-const TABS=[['look','search','Tra từ'],['nb','book','Sổ tay'],['fc','layers','Flashcard'],['ex','clip','Bài tập'],['sp','mic','Speaking']];
-function go(t){tab=t;render();window.scrollTo(0,0);if(t==='sp')spLoadQs()}
+// Thanh dưới: 3 mục. "Từ vựng" gồm Sổ tay / Flashcard / Bài tập; "Speaking" gồm Luyện nói / Shadowing.
+const TABS=[['look','search','Tra từ'],['vo','book','Từ vựng'],['sp','mic','Speaking'],['wr','pen','Writing']];
+const GRP={look:'look',nb:'vo',fc:'vo',ex:'vo',sp:'sp',sh:'sp',wr:'wr'};
+const SUBS={vo:[['nb','Sổ tay'],['fc','Flashcard'],['ex','Bài tập']],sp:[['sp','Luyện nói'],['sh','Shadowing']]};
+const lastIn={vo:'nb',sp:'sp'};
+function goG(g){go(lastIn[g]||g)}
+const subnav=()=>{const s=SUBS[GRP[tab]];return s?`<div class="pg" style="padding-top:0;padding-bottom:0"><div class="seg" role="tablist">${s.map(x=>`<button class="${tab===x[0]?'on':''}" role="tab" aria-selected="${tab===x[0]}" onclick="go('${x[0]}')">${x[1]}</button>`).join('')}</div></div>`:''};
+function go(t){if(tab==='sh'&&t!=='sh')shLeave();tab=t;if(lastIn[GRP[t]]!==undefined)lastIn[GRP[t]]=t;render();window.scrollTo(0,0);if(t==='sp')spLoadQs()}
 
 /* ---- Thành phần dùng chung ---- */
-const head=(t,r='')=>`<div class="top"><div class="brand">${ic('book',14)}VocaBook</div><div class="hd"><h1>${t}</h1>${r}</div></div>`;
+const head=(t,r='')=>`<div class="top"><div class="brand">${ic('book',14)}VocaBook</div><div class="hd"><h1>${t}</h1>${r}</div></div>`+subnav();
 const ibtn=(i,click,title,on)=>`<button class="ib${on?' on':''}" onclick="${click}" aria-label="${title}" title="${title}">${ic(i,18)}</button>`;
 const spk=t=>`<button class="spk" data-t="${esc(t)}" onclick="event.stopPropagation();speak(this.dataset.t)" aria-label="Nghe phát âm">${ic('vol',18)}</button>`;
 const nbOpts=(sel,all)=>(all?`<option value="all"${sel==='all'?' selected':''}>Tất cả sổ tay</option>`:'')+S.nbs.map(n=>`<option value="${n.id}"${sel===n.id?' selected':''}>${esc(n.name)}</option>`).join('');
 const scopeRow=()=>`<label class="sel">${ic('book',16)}<select aria-label="Phạm vi ôn tập" onchange="S.cur=this.value;save();fc={q:[],i:0,f:false,due:false};ex=null;exErr='';render()">${nbOpts(S.cur,true)}</select><span class="cv">${ic('down',16)}</span></label>`;
 
 function render(){
-  $('#nav').innerHTML=TABS.map(t=>`<button class="${tab===t[0]?'on':''}" onclick="go('${t[0]}')" ${tab===t[0]?'aria-current="page"':''}>${ic(t[1],20)}${t[2]}</button>`).join('');
-  $('#app').innerHTML={look:vLook,nb:vNb,fc:vFc,ex:vEx,sp:vSp}[tab]();
+  $('#nav').innerHTML=TABS.map(t=>{const on=GRP[tab]===t[0];return `<button class="${on?'on':''}" onclick="goG('${t[0]}')" ${on?'aria-current="page"':''}>${ic(t[1],20)}${t[2]}</button>`}).join('');
+  $('#app').innerHTML={look:vLook,nb:vNb,fc:vFc,ex:vEx,sp:vSp,sh:vSh,wr:vWr}[tab]();
+  if(tab==='sh')shAfter();
 }
 
 /* ================= Tra từ ================= */
@@ -515,9 +610,11 @@ const SPQ_DEF={
 const toQ=o=>{const r={};[1,2,3].forEach(p=>r[p]=(o[p]||[]).map(x=>typeof x==='string'?{id:null,text:x}:x));return r};
 let SPQ=toQ(SPQ_DEF);
 try{const c=JSON.parse(localStorage.getItem('sp_qs')||'null');if(c)SPQ=toQ(c)}catch(e){}
-let sp={part:1,qi:0,rec:false,busy:false,res:null,err:'',t0:0,mr:null,chunks:[],timer:null,cfg:false,hist:false};
+let sp={part:1,qi:0,rec:false,busy:false,res:null,err:'',t0:0,mr:null,chunks:[],timer:null,cfg:false,hist:false,blob:null,buf:null,why:{},paused:false,acc:0,seg:0,bag:{},picker:false,qh:false,hx:{},review:false,hrec:null,hmore:false};
+sp.qi=Math.floor(Math.random()*((SPQ[1]||[]).length||1));   // bắt đầu bằng một câu ngẫu nhiên
+let wm=null;                                          // cửa sổ luyện phát âm một từ
 let au={mode:'login',user:'',err:'',busy:false};      // form đăng nhập / đăng ký
-let adm={open:false,part:1,draft:'',edit:null,msg:''}; // bảng quản lý câu hỏi (admin)
+let adm={open:false,part:1,draft:'',edit:null,msg:'',bulk:false,bdraft:''}; // bảng quản lý câu hỏi (admin)
 const CFG_URL=(window.VOCABOOK_API_URL||'').trim();           // đặt trong config.js
 const SP_DEFAULT={url:CFG_URL||'http://127.0.0.1:8000'};
 const DEV_CFG=!CFG_URL;                                        // chưa có config.js => hiện ô nhập địa chỉ máy chủ
@@ -527,11 +624,145 @@ function spSaveCfg(){try{localStorage.setItem('sp_cfg',JSON.stringify({url:$('#s
 const bnd=n=>n==null?'–':Number(n).toFixed(1);
 const curQ=()=>{const qs=SPQ[sp.part]||[];return qs.length?qs[sp.qi%qs.length]:null};
 
+/* ---- Lịch sử Speaking: lưu đầy đủ kết quả + bản ghi âm trong IndexedDB (chỉ nằm trên máy bạn) ---- */
+const SP_HMAX=80;                       // giữ tối đa 80 bài gần nhất
+const SPH={list:[],ready:false,err:false,db:null};
+const spdb=()=>SPH.db||(SPH.db=new Promise((ok,no)=>{try{const r=indexedDB.open('vocabook_sp',1);r.onupgradeneeded=()=>r.result.createObjectStore('h',{keyPath:'id'});r.onsuccess=()=>ok(r.result);r.onerror=()=>no(r.error)}catch(e){no(e)}}));
+const spHTx=(mode,fn)=>spdb().then(d=>new Promise((ok,no)=>{const tx=d.transaction('h',mode);let o;try{o=fn(tx.objectStore('h'))}catch(e){no(e);return}tx.oncomplete=()=>ok(o&&o.result);tx.onerror=tx.onabort=()=>no(tx.error)}));
+const spClean=r=>{const {impBusy,impErr,...c}=r;return c};
+const spUser=()=>AU&&AU.user?AU.user.username:'';
+const spL=()=>SPH.list.filter(r=>r.u===spUser());          // lịch sử của tài khoản đang đăng nhập
+const spKey=q=>q.id!=null?'i'+q.id:'t'+q.text;
+const spFmt=ms=>{const s=Math.floor(ms/1000);return Math.floor(s/60)+':'+String(s%60).padStart(2,'0')};
+const spEl=()=>sp.acc+(sp.rec&&!sp.paused?Date.now()-sp.seg:0);   // thời gian đã ghi (không tính lúc tạm dừng)
+const spDt=t=>new Date(t).toLocaleString('vi-VN',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'});
+function spHLoad(){
+  spHTx('readonly',s=>s.getAll()).then(a=>{SPH.list=(a||[]).sort((x,y)=>y.t-x.t);SPH.ready=true;spHRefresh()})
+    .catch(()=>{SPH.ready=true;SPH.err=true;spHRefresh()});
+}
+function spHRefresh(){const a=document.activeElement&&document.activeElement.tagName;if(tab==='sp'&&!sp.rec&&!sp.busy&&a!=='INPUT'&&a!=='TEXTAREA'&&a!=='SELECT')render()}
+async function spHPut(rec){
+  const c={...rec,res:spClean(rec.res)};
+  try{await spHTx('readwrite',s=>s.put(c))}
+  catch(e){if(c.blob){try{await spHTx('readwrite',s=>s.put({...c,blob:null}))}catch(x){SPH.err=true}}else SPH.err=true}
+}
+function spHAdd(q,blob){
+  const res=sp.res,rec={id:res.jobId||('h'+Date.now()),t:Date.now(),u:spUser(),part:sp.part,qkey:q?spKey(q):'',q:q?q.text:'',dur:res.duration||0,res,blob};
+  SPH.list=[rec,...SPH.list.filter(x=>x.id!==rec.id)];sp.hrec=rec;
+  try{navigator.storage&&navigator.storage.persist&&navigator.storage.persist()}catch(e){}
+  spHPut(rec);
+  if(SPH.list.length>SP_HMAX){const drop=SPH.list.slice(SP_HMAX);SPH.list=SPH.list.slice(0,SP_HMAX);spHTx('readwrite',s=>drop.forEach(x=>s.delete(x.id))).catch(()=>{})}
+}
+function spHDel(id){
+  if(!confirm('Xóa bài nói này khỏi lịch sử (cả bản ghi âm)?'))return;
+  SPH.list=SPH.list.filter(x=>x.id!==id);spHTx('readwrite',s=>s.delete(id)).catch(()=>{});
+  if(sp.hrec&&sp.hrec.id===id){spBackH();return}
+  render();
+}
+function spHClear(){
+  const mine=spL();if(!mine.length||!confirm('Xóa toàn bộ '+mine.length+' bài nói đã lưu của bạn trên máy này?'))return;
+  SPH.list=SPH.list.filter(x=>x.u!==spUser());spHTx('readwrite',s=>mine.forEach(x=>s.delete(x.id))).catch(()=>{});render();
+}
+async function spHPurgeUser(u){
+  const mine=SPH.list.filter(x=>x.u===u);SPH.list=SPH.list.filter(x=>x.u!==u);
+  try{await spHTx('readwrite',s=>mine.forEach(x=>s.delete(x.id)))}catch(e){}
+}
+function spStats(){const st={};spL().forEach(r=>{const s=st[r.qkey]||(st[r.qkey]={n:0,best:0});s.n++;s.best=Math.max(s.best,r.res.overall||0)});return st}
+spHLoad();
+
+/* ---- Chọn câu hỏi: ngẫu nhiên (xáo trộn, không lặp cho tới khi hết lượt) hoặc chọn từ danh sách ---- */
+function spReset(){plStop(true);sp.res=null;sp.err='';sp.blob=sp.buf=null;sp.hrec=null;sp.why={};sp.qh=false;stopPlay();wmClose()}
+function spPart(p){const n=(SPQ[p]||[]).length;sp.part=p;sp.qi=n?Math.floor(Math.random()*n):0;sp.picker=false;spReset();render()}
+function spRandQ(){
+  const qs=SPQ[sp.part]||[];if(qs.length<2)return;
+  const cq=curQ(),ck=cq?spKey(cq):'',keys=qs.map(spKey);
+  let bag=(sp.bag[sp.part]||[]).filter(k=>keys.includes(k)&&k!==ck);
+  if(!bag.length){bag=keys.filter(k=>k!==ck);for(let i=bag.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[bag[i],bag[j]]=[bag[j],bag[i]]}}
+  const k=bag.shift();sp.bag[sp.part]=bag;sp.qi=Math.max(0,keys.indexOf(k));sp.picker=false;spReset();render();
+}
+function spPick(i){sp.qi=i;sp.picker=false;spReset();render();window.scrollTo(0,0)}
+function spFilterQ(v){v=v.trim().toLowerCase();document.querySelectorAll('#pqlist .pqi').forEach(b=>{b.style.display=(!v||b.dataset.s.includes(v))?'':'none'})}
+const spQMain=q=>{const cu=spCues(q);return cu?cu.main:q};
+function spPicker(){
+  const qs=SPQ[sp.part]||[],st=spStats(),ck=curQ()?spKey(curQ()):'';
+  return `<div class="card"><b class="t">Chọn câu hỏi · Part ${sp.part} (${qs.length} câu)</b>
+  ${qs.length>6?`<input class="f" style="margin:0" placeholder="Tìm câu hỏi…" oninput="spFilterQ(this.value)" autocapitalize="off">`:''}
+  <div class="pqs" id="pqlist">${qs.map((q,i)=>{const s=st[spKey(q)];
+    return `<button class="pqi${spKey(q)===ck?' on':''}" data-s="${esc(q.text.toLowerCase())}" onclick="spPick(${i})"><span class="q">${esc(spQMain(q.text))}</span><span class="pill">${s?s.n+' lần · '+bnd(s.best):'Chưa nói'}</span></button>`}).join('')}</div></div>`;
+}
+
+/* ---- Ghi âm: tạm dừng / tiếp tục ---- */
+function spPause(){
+  if(!sp.rec||!sp.mr)return;
+  try{
+    if(sp.mr.state==='recording'){sp.mr.pause();sp.acc+=Date.now()-sp.seg;sp.paused=true}
+    else if(sp.mr.state==='paused'){sp.mr.resume();sp.seg=Date.now();sp.paused=false}
+  }catch(e){sp.err='Thiết bị này không hỗ trợ tạm dừng ghi âm.'}
+  render();
+}
+function spMicHtml(q){
+  if(!sp.rec)return `<button class="mic" ${q?'':'disabled'} onclick="spToggle()" aria-label="Bắt đầu ghi âm">${ic('mic',28)}</button><b>Chạm để bắt đầu nói</b><p>Cho phép micro để ghi âm và nhận góp ý.</p>`;
+  const ps=sp.paused,can=sp.mr&&typeof sp.mr.pause==='function';
+  return `<div id="sptime" class="tm${ps?' ps':''}">${spFmt(spEl())}</div>
+  <div class="mrow">${can?`<button class="mic pz" onclick="spPause()" aria-label="${ps?'Tiếp tục ghi âm':'Tạm dừng ghi âm'}">${ic(ps?'play':'pause',22)}</button>`:''}<button class="mic rec${ps?' ps':''}" onclick="spToggle()" aria-label="Dừng và chấm điểm">${ic('stop',28)}</button></div>
+  <b>Chạm nút vuông để dừng và chấm điểm</b><p>${ps?'Đang tạm dừng · chạm nút ▶ để nói tiếp':(can?'Đang ghi âm… chạm nút ⏸ nếu cần dừng tạm':'Đang ghi âm…')}</p>`;
+}
+
+/* ---- Giao diện lịch sử ---- */
+const spAtt=r=>{const B=r.res.bands||{};return `<div class="li"><div><b>Band ${bnd(r.res.overall)}</b> · ${spDt(r.t)}${r.dur?' · '+Math.round(r.dur)+'s':''}<br><span class="mut" style="font-size:11.5px">F ${bnd(B.fluency)} · L ${bnd(B.lexical)} · G ${bnd(B.grammar)} · P ${bnd(B.pronunciation)}${r.res.imp?' · có bản cải thiện':''}</span></div>
+  <div class="row" style="flex:none;gap:14px"><button class="lnk" data-id="${esc(r.id)}" onclick="spOpenH(this.dataset.id)">${ic('play',13)} Xem lại</button><button class="lnk" style="color:var(--bad)" data-id="${esc(r.id)}" onclick="spHDel(this.dataset.id)" aria-label="Xóa bài này">${ic('trash',14)}</button></div></div>`};
+function spQHist(q){   // dòng "đã nói câu này n lần" dưới câu hỏi hiện tại
+  if(!q)return '';const rs=spL().filter(r=>r.qkey===spKey(q));if(!rs.length)return '';
+  const best=Math.max(...rs.map(r=>r.res.overall||0));
+  return `<div class="qh"><span>Đã nói câu này ${rs.length} lần · cao nhất band ${bnd(best)}</span><button class="lnk" onclick="sp.qh=!sp.qh;render()">${sp.qh?'Thu gọn':'Xem lại bài cũ'}</button></div>`
+    +(sp.qh?`<div class="card" style="padding:4px 16px">${rs.map(spAtt).join('')}</div>`:'');
+}
+function spGx(k){sp.hx[k]=!sp.hx[k];render()}
+function vSpHist(){
+  if(!SPH.ready)return '';
+  const L=spL(),hd=(x='')=>`<div class="sh" style="margin-top:22px"><h3>Lịch sử luyện nói</h3>${x}</div>`;
+  if(SPH.err&&!L.length)return hd()+`<div class="card"><p class="mut" style="font-size:12.5px">Trình duyệt này không cho lưu lịch sử bài nói (có thể đang ở chế độ riêng tư).</p></div>`;
+  if(!L.length){
+    const hs=S.speaks||[];
+    return hd()+`<div class="card"><p class="mut" style="font-size:12.5px">Từ giờ, mỗi bài nói được chấm sẽ được lưu ở đây cùng bản ghi âm, điểm các tiêu chí, nhận xét và bản cải thiện để bạn xem lại. Dữ liệu chỉ nằm trên máy bạn.</p>${hs.length?`<hr>`+hs.slice(0,5).map(y=>`<div class="li"><div>${new Date(y.t).toLocaleDateString('vi-VN')} · Phần ${y.part}</div><b>${bnd(y.overall)}</b></div>`).join(''):''}</div>`;
+  }
+  const g={};L.forEach(r=>{(g[r.qkey]||(g[r.qkey]=[])).push(r)});
+  const gs=Object.entries(g).sort((a,b)=>b[1][0].t-a[1][0].t),show=sp.hmore?gs:gs.slice(0,8);
+  let h=hd(`<button class="lnk" style="color:var(--bad)" onclick="spHClear()">Xóa hết</button>`);
+  h+=`<p class="msg">${L.length} bài · ${gs.length} câu hỏi. Chạm vào câu hỏi để xem các lần đã nói.</p>`;
+  h+=show.map(([k,rs])=>{const open=!!sp.hx[k],best=Math.max(...rs.map(r=>r.res.overall||0));
+    return `<div class="card"><button class="hgb" data-k="${esc(k)}" onclick="spGx(this.dataset.k)"><div style="min-width:0"><span class="tg">Part ${rs[0].part}</span><div class="hgq">${esc(spQMain(rs[0].q))}</div><div class="mut" style="font-size:12px">${rs.length} lần · cao nhất band ${bnd(best)} · gần nhất ${spDt(rs[0].t)}</div></div><span class="mut" style="flex:none">${ic(open?'chevup':'down',16)}</span></button>${open?`<div class="hga">${rs.map(spAtt).join('')}</div>`:''}</div>`}).join('');
+  if(gs.length>8)h+=`<div class="more" style="margin:0 0 8px"><button class="lnk" onclick="sp.hmore=!sp.hmore;render()">${sp.hmore?'Thu gọn':'Xem thêm '+(gs.length-8)+' câu'}</button></div>`;
+  return h;
+}
+
+/* ---- Xem lại một bài đã lưu (đầy đủ: điểm, nhận xét, phát âm, bản cải thiện, nghe lại) ---- */
+function spOpenH(id){
+  const r=SPH.list.find(x=>x.id===id);if(!r)return;
+  plStop(true);stopPlay();wmClose();sp.review=true;sp.hrec=r;sp.res=r.res;sp.blob=r.blob||null;sp.buf=null;sp.why={};sp.err='';render();window.scrollTo(0,0);
+}
+function spBackH(){sp.review=false;spReset();render()}
+function spRedo(){
+  const r=sp.hrec;if(!r)return;
+  const qs=SPQ[r.part]||[],i=qs.findIndex(x=>spKey(x)===r.qkey);
+  if(i<0){alert('Câu hỏi này không còn trong danh sách.');return}
+  sp.review=false;spReset();sp.part=r.part;sp.qi=i;sp.picker=false;render();window.scrollTo(0,0);
+}
+function vSpReview(){
+  const r=sp.hrec,cu=spCues(r.q);
+  return head('Xem lại bài nói','')+`<div class="pg"><button class="lnk" style="margin-bottom:12px" onclick="spBackH()">${ic('back',14)} Quay lại luyện tập</button>
+  <div class="card"><span class="tg">Part ${r.part}</span> <span class="mut" style="font-size:12px;margin-left:6px">${spDt(r.t)}${r.dur?' · '+Math.round(r.dur)+'s':''}</span><div style="height:10px"></div>`
+  +(cu?`<div class="sq">${esc(cu.main)}</div><div class="sy">You should say:</div><ul class="cue">${cu.items.map(i=>`<li>${esc(i)}</li>`).join('')}</ul>`:`<div class="sq q">${esc(r.q)}</div>`)+`</div>`
+  +(r.blob?'':`<p class="msg">Bản ghi âm của bài này không còn trên máy nên không nghe lại được, nhưng điểm và nhận xét vẫn còn.</p>`)
+  +spResult(sp.res)
+  +`<div class="row" style="margin-top:6px"><button class="btn" onclick="spRedo()">Luyện lại câu này</button><button class="btn s" style="width:auto;flex:none" data-id="${esc(r.id)}" onclick="spHDel(this.dataset.id)" aria-label="Xóa bài này">${ic('trash',16)}</button></div></div>`;
+}
+
 /* ---- Đăng nhập / đăng ký ---- */
 let AU=null;try{AU=JSON.parse(localStorage.getItem('sp_auth')||'null')}catch(e){}
 const authSave=()=>{try{AU?localStorage.setItem('sp_auth',JSON.stringify(AU)):localStorage.removeItem('sp_auth')}catch(e){}};
 const isAdmin=()=>!!(AU&&AU.user&&AU.user.role==='admin');
-function spLogout(){AU=null;authSave();sp.res=null;sp.err='';adm.edit=null;adm.msg=''}
+function spLogout(){AU=null;authSave();wrReset();sp.review=false;sp.hrec=null;sp.picker=false;sp.qh=false;sp.res=null;sp.err='';sp.blob=sp.buf=null;stopPlay();wmClose();adm.edit=null;adm.msg=''}
 // Gọi máy chủ: tự gắn token, ném Error có thông báo tiếng Việt
 async function api(path,opt={}){
   const h={...(opt.headers||{})};
@@ -550,7 +781,7 @@ async function api(path,opt={}){
 function vAuth(){
   const reg=au.mode==='reg';
   return `<div class="card"><b class="t" style="font-size:16px">${reg?'Tạo tài khoản':'Đăng nhập'}</b>
-  <p class="mut" style="font-size:12.5px;margin-bottom:16px">Cần đăng nhập để luyện Speaking. Tra từ, sổ tay, flashcard và bài tập vẫn dùng được mà không cần tài khoản.</p>
+  <p class="mut" style="font-size:12.5px;margin-bottom:16px">Cần đăng nhập để luyện Speaking và chấm Writing. Tra từ, sổ tay, flashcard và bài tập vẫn dùng được mà không cần tài khoản.</p>
   <label class="fl" for="au_u">Tên đăng nhập</label><input class="f" id="au_u" value="${esc(au.user)}" autocapitalize="off" autocomplete="username" oninput="au.user=this.value">
   <label class="fl" for="au_p">Mật khẩu${reg?' (từ 8 ký tự)':''}</label><input class="f" id="au_p" type="password" autocomplete="${reg?'new-password':'current-password'}" onkeydown="if(event.key==='Enter')authGo()">
   ${au.err?`<p class="err">${esc(au.err)}</p>`:''}
@@ -571,7 +802,7 @@ async function authGo(){
 }
 async function spLoadQs(){
   if(!AU)return;
-  try{const d=await api('/questions');SPQ=toQ(d);try{localStorage.setItem('sp_qs',JSON.stringify(d))}catch(e){}}
+  try{const d=await api('/questions');const cq=curQ(),ck=cq?spKey(cq):null;SPQ=toQ(d);if(ck){const i=(SPQ[sp.part]||[]).findIndex(x=>spKey(x)===ck);if(i>=0)sp.qi=i}try{localStorage.setItem('sp_qs',JSON.stringify(d))}catch(e){}}
   catch(e){if(!e.auth)return}   // lỗi mạng: giữ danh sách đã lưu
   const t=document.activeElement&&document.activeElement.tagName;
   if(tab==='sp'&&!sp.rec&&!sp.busy&&(t!=='INPUT'&&t!=='TEXTAREA'&&t!=='SELECT'))render();
@@ -583,7 +814,12 @@ function vAdmin(){
   if(!adm.open)return h+`</div>`;
   const list=SPQ[adm.part]||[];
   h+=`<div style="height:14px"></div><label class="sel" style="margin-bottom:12px"><select aria-label="Phần thi" onchange="adm.part=+this.value;adm.edit=null;adm.msg='';render()">${[1,2,3].map(p=>`<option value="${p}"${adm.part===p?' selected':''}>Part ${p} (${(SPQ[p]||[]).length} câu)</option>`).join('')}</select><span class="cv">${ic('down',16)}</span></label>
-  <label class="fl" for="adm_t">Câu hỏi mới</label><textarea class="f" id="adm_t" rows="4" oninput="adm.draft=this.value" placeholder="Nhập câu hỏi. Part 2 có thể xuống dòng để ghi các ý “You should say”.">${esc(adm.draft)}</textarea>
+  <div class="seg in"><button class="${adm.bulk?'':'on'}" onclick="adm.bulk=false;adm.msg='';render()">Thêm 1 câu</button><button class="${adm.bulk?'on':''}" onclick="adm.bulk=true;adm.msg='';render()">Thêm nhiều câu</button></div>`;
+  if(adm.bulk){const n=parseBulk(adm.bdraft,adm.part).length;
+    h+=`<label class="fl" for="adm_b">Danh sách câu hỏi</label><textarea class="f" id="adm_b" rows="9" oninput="adm.bdraft=this.value;bulkCount()" placeholder="Mỗi dòng là một câu hỏi.&#10;Câu nhiều dòng: ngăn cách các câu bằng một dòng trống hoặc một dòng chỉ có ---">${esc(adm.bdraft)}</textarea>
+    <p class="msg" style="margin-top:-4px">Mỗi dòng một câu. Câu nhiều dòng: ngăn cách các câu bằng <b>một dòng trống</b> hoặc dòng <b>---</b> (Part 2 nên dùng ---). Tự bỏ số thứ tự/gạch đầu dòng và câu trùng.</p>
+    <button class="btn" id="adm_bb" ${n?'':'disabled'} onclick="qBulk()">${n?`Thêm ${n} câu vào Part ${adm.part}`:'Chưa có câu hỏi để thêm'}</button>`;
+  }else h+=`<label class="fl" for="adm_t">Câu hỏi mới</label><textarea class="f" id="adm_t" rows="4" oninput="adm.draft=this.value" placeholder="Nhập câu hỏi. Part 2 có thể xuống dòng để ghi các ý “You should say”.">${esc(adm.draft)}</textarea>
   <button class="btn" onclick="qAdd()">Thêm vào Part ${adm.part}</button>`;
   if(adm.msg)h+=`<p class="msg" style="margin:12px 0 0">${esc(adm.msg)}</p>`;
   h+=`<div style="margin-top:12px">`;
@@ -599,6 +835,43 @@ function vAdmin(){
 async function admCall(path,opt,okMsg){
   try{await api(path,opt);adm.msg=okMsg;adm.edit=null;if(okMsg==='Đã thêm câu hỏi.')adm.draft='';await spLoadQs()}
   catch(e){adm.msg=e.message}
+  render();
+}
+// Tách ô nhập nhiều câu. Thứ tự ưu tiên:
+//  1) có dòng '---'      -> tách theo đó
+//  2) có dòng trống      -> mỗi khối cách nhau bởi dòng trống là một câu (câu có thể nhiều dòng)
+//  3) còn lại            -> mỗi dòng một câu, trừ dòng bắt đầu bằng chữ thường (câu trước chưa kết thúc) thì nối vào câu trước
+// Part 2 giữ xuống dòng trong câu; Part 1/3 nối các dòng thành một câu.
+function parseBulk(t,part){
+  const n=String(t||'').replace(/\r/g,'').replace(/\u00a0/g,' ');
+  const join=part===2?'\n':' ';
+  let blocks;
+  if(/^[ \t]*-{3,}[ \t]*$/m.test(n))blocks=n.split(/^[ \t]*-{3,}[ \t]*$/m);
+  else if(/\n[ \t]*\n/.test(n))blocks=n.split(/\n[ \t]*\n/);
+  else{
+    blocks=[];
+    n.split('\n').map(l=>l.trim()).filter(Boolean).forEach(l=>{
+      const k=blocks.length-1;
+      if(k>=0&&/^[a-z]/.test(l)&&!/[?.!:…"”)]$/.test(blocks[k]))blocks[k]+='\n'+l;
+      else blocks.push(l);
+    });
+  }
+  const seen=new Set();
+  return blocks
+    .map(b=>b.split('\n').map(l=>l.trim()).filter(Boolean).map((l,i)=>i?l:l.replace(/^(?:\d+[.)]|[-•*])\s+/,'')).join(join))
+    .filter(x=>{const k=x.replace(/\s+/g,' ').toLowerCase();if(x.length<5||seen.has(k))return false;seen.add(k);return true});
+}
+function bulkCount(){const n=parseBulk(adm.bdraft,adm.part).length,b=$('#adm_bb');if(!b)return;
+  b.disabled=!n;b.textContent=n?`Thêm ${n} câu vào Part ${adm.part}`:'Chưa có câu hỏi để thêm'}
+async function qBulk(){
+  const items=parseBulk(adm.bdraft,adm.part);
+  if(!items.length){adm.msg='Chưa có câu hỏi hợp lệ để thêm.';render();return}
+  if(items.length>200){adm.msg='Mỗi lần chỉ thêm tối đa 200 câu.';render();return}
+  try{
+    const d=await api('/questions/bulk',{method:'POST',json:{part:adm.part,items}});
+    adm.msg=`Đã thêm ${d.added} câu`+(d.duplicate?`, bỏ qua ${d.duplicate} câu trùng`:'')+(d.invalid?`, ${d.invalid} câu không hợp lệ`:'')+'.';
+    if(d.added){adm.bdraft='';await spLoadQs()}
+  }catch(e){adm.msg=e.message}
   render();
 }
 function qAdd(){const t=($('#adm_t').value||'').trim();adm.draft=t;if(t.length<5){adm.msg='Câu hỏi quá ngắn.';render();return}
@@ -620,31 +893,27 @@ function vSp(){
   const c=spCfg();
   const cfgBtn=DEV_CFG?ibtn('sliders',"sp.cfg=!sp.cfg;render()",'Cấu hình máy chủ',sp.cfg):'';
   if(!AU)return head('Luyện Speaking',cfgBtn)+`<div class="pg">`+vAuth()+spCfgCard(c)+`</div>`;
+  if(sp.review&&sp.hrec)return vSpReview();
   const lock=sp.rec||sp.busy,qs=SPQ[sp.part]||[],q=curQ();
   let h=head('Luyện Speaking',cfgBtn)+`<div class="pg">`;
   h+=`<div class="strip">${ic('shield',15)}<span>Đã đăng nhập · ${esc(AU.user.username)}${isAdmin()?' (admin)':''}</span><button class="lnk" ${lock?'disabled':''} onclick="spLogout();render()">Đăng xuất</button></div>`;
   h+=`<div class="more" style="margin:-6px 0 12px"><button class="lnk" ${lock?'disabled':''} onclick="spChangePw()">Đổi mật khẩu</button>${isAdmin()?'':` <button class="lnk" ${lock?'disabled':''} onclick="spDelAcc()">Xóa tài khoản</button>`} <a class="lnk" href="privacy.html" target="_blank" rel="noopener">Chính sách riêng tư</a></div>`;
   h+=spCfgCard(c);
-  h+=`<div class="seg">${[1,2,3].map(p=>`<button class="${sp.part===p?'on':''}" ${lock?'disabled':''} onclick="sp.part=${p};sp.qi=0;sp.res=null;sp.err='';render()">Phần ${p}</button>`).join('')}</div>
-  <div class="sub"><span>IELTS · Nói theo chủ đề</span><button class="lnk" ${lock||qs.length<2?'disabled':''} onclick="sp.qi++;sp.res=null;sp.err='';render()">${ic('shuf',13)} Đổi đề</button></div>`;
+  h+=`<div class="seg">${[1,2,3].map(p=>`<button class="${sp.part===p?'on':''}" ${lock?'disabled':''} onclick="spPart(${p})">Phần ${p}</button>`).join('')}</div>
+  <div class="sub"><span>IELTS · Nói theo chủ đề</span><span class="row" style="gap:16px"><button class="lnk" ${lock||!qs.length?'disabled':''} onclick="sp.picker=!sp.picker;render()">${ic('layers',13)} Chọn câu</button><button class="lnk" ${lock||qs.length<2?'disabled':''} onclick="spRandQ()">${ic('shuf',13)} Đổi đề</button></span></div>`+(sp.picker&&!lock?spPicker():'');
   if(q){
     const cu=spCues(q.text);
     h+=`<div class="card"><span class="tg">Part ${sp.part}</span>`+(cu?`<div class="sq">${esc(cu.main)}</div><div class="sy">You should say:</div><ul class="cue">${cu.items.map(i=>`<li>${esc(i)}</li>`).join('')}</ul>`:`<div class="sq q">${esc(q.text)}</div>`)
       +(sp.part===2?`<div class="prep">${ic('clock',14)} Chuẩn bị 1 phút · Nói 1–2 phút</div>`:'')+`</div>`;
   }else h+=`<div class="card"><p class="mut">Phần này chưa có câu hỏi nào.</p></div>`;
+  h+=spQHist(q);
   h+=`<div class="micw">`+(sp.busy
     ?`<div class="spin"></div><b>Đang chấm điểm…</b><p>${sp.ahead>0?'Đang xếp hàng, còn '+sp.ahead+' bài phía trước. ':''}Có thể mất 30–90 giây. Đừng đóng ứng dụng.</p>`
-    :`${sp.rec?`<div id="sptime" class="tm">0:00</div>`:''}<button class="mic${sp.rec?' rec':''}" ${q?'':'disabled'} onclick="spToggle()" aria-label="${sp.rec?'Dừng và chấm điểm':'Bắt đầu ghi âm'}">${ic(sp.rec?'stop':'mic',28)}</button><b>${sp.rec?'Chạm để dừng và chấm điểm':'Chạm để bắt đầu nói'}</b><p>${sp.rec?'Đang ghi âm…':'Cho phép micro để ghi âm và nhận góp ý.'}</p>`)+`</div>`;
-  if(sp.err)h+=`<p class="err" style="margin-top:14px">${esc(sp.err)}</p>`;
+    :spMicHtml(q))+`</div>`;
+  if(sp.err)h+=`<p class="err" style="margin-top:14px">${esc(sp.err)}</p>`+(/đang được chấm/.test(sp.err)&&!lock?`<button class="lnk" onclick="spCancel()">Hủy bài đang kẹt rồi thử lại</button>`:'');
   if(sp.res)h+=`<div style="height:18px"></div>`+spResult(sp.res);
   if(isAdmin())h+=`<div style="height:8px"></div>`+vAdmin();
-  const hs=S.speaks||[];
-  if(hs.length){
-    const x=hs[0];
-    h+=`<div class="sh" style="margin-top:22px"><h3>Lần gần nhất</h3><button class="lnk" onclick="sp.hist=!sp.hist;render()">${sp.hist?'Thu gọn':'Lịch sử'}</button></div>
-    <div class="last"><div class="band"><b>${bnd(x.overall)}</b><small>ƯỚC TÍNH</small></div><div><b>Phần ${x.part}</b><div class="mut" style="font-size:12px">${new Date(x.t).toLocaleDateString('vi-VN')}</div></div></div>`;
-    if(sp.hist)h+=`<div class="card" style="margin-top:12px">${hs.slice(0,8).map(y=>`<div class="li"><div>${new Date(y.t).toLocaleDateString('vi-VN')} · Phần ${y.part}</div><b>${bnd(y.overall)}</b></div>`).join('')}</div>`;
-  }
+  h+=vSpHist();
   h+=`<div class="note">${ic('shield',14)}<span>Band ước lượng chỉ mang tính tham khảo, không phải điểm IELTS chính thức.</span></div></div>`;
   return h;
 }
@@ -657,11 +926,148 @@ function spResult(r){
   h+=`<div class="card"><b class="t">Độ trôi chảy</b><p class="mut" style="font-size:12.5px">${m.wpm||0} từ/phút · ${m.pauses||0} lần ngắt ≥0.5s (${m.long_pauses||0} lần ≥1.5s) · ${m.fillers||0} từ đệm · ${m.repeats||0} từ lặp · ${r.duration||0}s</p></div>`;
   if(r.llm){const l=r.llm;
     h+=`<div class="card"><b class="t">Nhận xét</b><p>${esc(l.summary_vi)}</p>${(l.tips_vi||[]).map(t=>`<div class="li"><div>${esc(t)}</div></div>`).join('')}</div>`;
-    if((l.corrections||[]).length)h+=`<div class="card"><b class="t">Gợi ý sửa câu</b>${l.corrections.map(c=>`<div class="li"><div><span class="mut">${esc(c.original)}</span><br><b>${esc(c.better)}</b><br><span class="mut" style="font-size:12px">${esc(c.why_vi)}</span></div></div>`).join('')}</div>`;
   }
-  const er=(r.pronunciation&&r.pronunciation.errors)||[];
-  if(er.length)h+=`<div class="card"><b class="t">Từ có thể phát âm chưa chuẩn</b>${er.map(e=>`<div class="li"><div><b>${esc(e.word)}</b><br><span class="mut" style="font-size:12px">chuẩn /${esc(e.expected)}/ · nghe được /${esc(e.actual||'—')}/</span></div><div class="row" style="flex:none"><span class="pill">${Math.round(e.confidence*100)}%</span>${spk(e.word)}</div></div>`).join('')}</div>`;
-  return h+`<div class="card"><b class="t">Văn bản nhận dạng</b><p class="mut" style="font-size:12.5px">${esc(r.transcript)}</p></div>`;
+  h+=spAnswer(r)+spImproveCard(r);
+  const mk=r.word_marks||[];
+  if(mk.some(x=>x.sev!=null))h+=`<div class="card"><b class="t">Chi tiết phát âm</b><p class="mut" style="font-size:12px">Chạm vào từ được gạch chân để nghe lại và luyện đọc.</p><div class="dv">${mk.map((x,i)=>x.sev==null?esc(x.w):(x.sev===2&&x.exp?`<span class="ipc">/${esc(x.exp)}/</span> `:'')+`<button class="pw w${x.sev}" onclick="wmOpen(${i})">${esc(x.w)}</button>`).join(' ')}</div>
+    <div class="lgd"><span><i style="border-bottom:2px dotted var(--mut)"></i>Lỗi phụ</span><span><i style="background:var(--warn)"></i>Lỗi nhẹ</span><span><i style="background:var(--bad)"></i>Lỗi nặng</span></div></div>`;
+  else{const er=(r.pronunciation&&r.pronunciation.errors)||[];
+    if(er.length)h+=`<div class="card"><b class="t">Từ có thể phát âm chưa chuẩn</b>${er.map(e=>`<div class="li"><div><b>${esc(e.word)}</b><br><span class="mut" style="font-size:12px">chuẩn /${esc(e.expected)}/ · nghe được /${esc(e.actual||'—')}/</span></div><div class="row" style="flex:none"><span class="pill">${Math.round(e.confidence*100)}%</span>${spk(e.word)}</div></div>`).join('')}</div>`}
+  return h+(wm?vWm():'');
+}
+/* ---- Phát lại bản ghi (giải mã bằng WebAudio để phát đúng từng từ; bản ghi chỉ nằm trên máy bạn) ---- */
+let ac=null,psrc=null;
+async function spBuf(){
+  if(sp.buf)return sp.buf;if(!sp.blob)return null;
+  ac=ac||new (window.AudioContext||window.webkitAudioContext)();
+  sp.buf=await ac.decodeAudioData(await sp.blob.arrayBuffer());return sp.buf;
+}
+function stopPlay(){try{psrc&&psrc.stop()}catch(e){}psrc=null}
+/* ---- Trình phát bản ghi: phát / tạm dừng / tiếp tục / tua ---- */
+const pl={st:'idle',off:0,t0:0,dur:0,tk:0,raf:0,drag:false};   // st: idle | play | pause
+const plPos=()=>pl.st==='play'&&ac?Math.min(pl.dur||1e9,pl.off+(ac.currentTime-pl.t0)):pl.off;
+const plDur=()=>pl.dur||(sp.res&&sp.res.duration)||0;
+function plHtml(){
+  const d=plDur(),pn=pl.st==='play';
+  return `<div class="plw"><button class="plb" id="plbtn" onclick="plToggle()" aria-label="${pn?'Tạm dừng':'Phát bản ghi'}">${ic(pn?'pause':'play',16)}</button><input type="range" id="plr" min="0" max="${d}" step="0.05" value="${plPos()}" oninput="plDrag(this.value)" onchange="plSeek(this.value)" aria-label="Tua bản ghi"><span class="plt" id="plt">${spFmt(plPos()*1000)} / ${spFmt(d*1000)}</span></div>`;
+}
+function plPaint(){
+  const b=$('#plbtn'),r=$('#plr'),l=$('#plt');if(!b)return;
+  const pn=pl.st==='play',d=plDur(),pos=plPos();
+  b.innerHTML=ic(pn?'pause':'play',16);b.setAttribute('aria-label',pn?'Tạm dừng':'Phát bản ghi');
+  if(r){r.max=d;if(!pl.drag)r.value=pos}
+  if(l&&!pl.drag)l.textContent=spFmt(pos*1000)+' / '+spFmt(d*1000);
+}
+function plTick(){cancelAnimationFrame(pl.raf);const f=()=>{if(pl.st!=='play')return;plPaint();pl.raf=requestAnimationFrame(f)};pl.raf=requestAnimationFrame(f)}
+function plStop(reset){pl.tk++;stopPlay();cancelAnimationFrame(pl.raf);pl.st='idle';pl.drag=false;if(reset){pl.off=0;pl.dur=0}}
+async function plStart(off){
+  try{
+    const b=await spBuf();if(!b)return;
+    if(ac.state==='suspended')await ac.resume();
+    stopPlay();const tk=++pl.tk;pl.dur=b.duration;
+    off=Math.max(0,Math.min(+off||0,b.duration-.05));
+    const n=ac.createBufferSource();n.buffer=b;n.connect(ac.destination);
+    n.onended=()=>{if(pl.tk!==tk)return;pl.st='idle';pl.off=0;cancelAnimationFrame(pl.raf);plPaint()};
+    n.start(0,off);psrc=n;pl.off=off;pl.t0=ac.currentTime;pl.st='play';plTick();plPaint();
+  }catch(x){sp.err='Không phát được bản ghi trên thiết bị này.';render()}
+}
+function plPause(){if(pl.st!=='play')return;pl.off=plPos();pl.tk++;stopPlay();cancelAnimationFrame(pl.raf);pl.st='pause';plPaint()}
+function plToggle(){if(pl.st==='play')plPause();else plStart(pl.off)}   // idle/pause: phát từ vị trí hiện tại
+function plDrag(v){pl.drag=true;const l=$('#plt');if(l)l.textContent=spFmt(v*1000)+' / '+spFmt(plDur()*1000)}
+function plSeek(v){pl.drag=false;v=+v;if(pl.st==='play')plStart(v);else{pl.off=v;if(pl.st==='idle'&&v>0)pl.st='pause';plPaint()}}
+async function playSeg(s,e){
+  if(pl.st==='play')plPause();
+  try{
+    const b=await spBuf();if(!b)return;if(ac.state==='suspended')await ac.resume();
+    stopPlay();const n=ac.createBufferSource();n.buffer=b;n.connect(ac.destination);
+    const a=Math.max(0,s-.08);n.start(0,a,Math.max(.2,Math.min(b.duration,e+.12)-a));psrc=n;
+  }catch(x){sp.err='Không phát được bản ghi trên thiết bị này.';render()}
+}
+// Câu trả lời: gạch đỏ (sai) → chữ xanh (nên nói) + nút "giải thích"
+function spAnswer(r){
+  const t=r.transcript||'',cs=(r.llm&&r.llm.corrections)||[],hit=[],rest=[];
+  cs.forEach((c,i)=>{const o=(c.original||'').trim(),k=o?t.toLowerCase().indexOf(o.toLowerCase()):-1;
+    if(k<0||hit.some(x=>k<x.e&&k+o.length>x.k))rest.push(c);else hit.push({k,e:k+o.length,c,i})});
+  hit.sort((x,y)=>x.k-y.k);
+  let d='',p=0;
+  hit.forEach(x=>{d+=esc(t.slice(p,x.k))+`<s class="del">${esc(t.slice(x.k,x.e))}</s> <span class="ins">${esc(x.c.better)}</span> <button class="lnk" onclick="sp.why[${x.i}]=!sp.why[${x.i}];render()">giải thích</button>`+(sp.why[x.i]?`<span class="why">${esc(x.c.why_vi)}</span>`:' ');p=x.e});
+  d+=esc(t.slice(p));
+  return `<div class="card"><b class="t">Câu trả lời của bạn</b>${sp.blob?plHtml():''}<div class="dv">${d}</div>`
+    +rest.map(c=>`<div class="li"><div><span class="mut">${esc(c.original)}</span><br><b>${esc(c.better)}</b><br><span class="mut" style="font-size:12px">${esc(c.why_vi)}</span></div></div>`).join('')+`</div>`;
+}
+
+/* ---- Cửa sổ luyện phát âm một từ ---- */
+const PH_DI=['tʃ','dʒ','eɪ','aɪ','ɔɪ','aʊ','əʊ','oʊ','ɪə','eə','ʊə'];
+function phTok(s){   // tách chuỗi IPA thành từng âm (âm đôi, dấu kéo dài ː)
+  s=String(s||'').replace(/[\/\[\]ˈˌ.]/g,'').trim();
+  if(/\s/.test(s))return s.split(/\s+/);
+  const o=[];let i=0;
+  while(i<s.length){
+    if(PH_DI.includes(s.substr(i,2))){o.push(s.substr(i,2));i+=2;continue}
+    let c=s[i++];while(i<s.length&&/[ːˑ:\u0300-\u036f\u02b0-\u02ff]/.test(s[i]))c+=s[i++];
+    o.push(c.replace(':','ː'));
+  }
+  return o;
+}
+function phDiff(a,b){   // đánh dấu âm nào khớp nhau (LCS)
+  const n=a.length,m=b.length,L=Array.from({length:n+1},()=>Array(m+1).fill(0));
+  for(let i=n-1;i>=0;i--)for(let j=m-1;j>=0;j--)L[i][j]=a[i]===b[j]?L[i+1][j+1]+1:Math.max(L[i+1][j],L[i][j+1]);
+  const A=a.map(p=>({p,ok:false})),B=b.map(p=>({p,ok:false}));let i=0,j=0;
+  while(i<n&&j<m){if(a[i]===b[j]){A[i].ok=B[j].ok=true;i++;j++}else if(L[i+1][j]>=L[i][j+1])i++;else j++}
+  return{A,B};
+}
+const TRC={};
+function wmOpen(i){
+  const x=(sp.res.word_marks||[])[i];if(!x)return;stopPlay();
+  const w=x.w.replace(/[^A-Za-z' ]/g,'').trim();
+  wm={w,exp:x.exp||'',act:x.act||'',s:x.s,e:x.e,vi:TRC[w.toLowerCase()]||'',rec:false,busy:false,res:null,err:''};
+  if(!wm.vi){const m=wm;tr(w).then(v=>{if(v)TRC[w.toLowerCase()]=v;if(wm===m){m.vi=v;render()}})}
+  render();
+}
+function wmClose(){if(wm){if(wm.rec){wm.cancel=true;try{wm.mr.stop()}catch(e){}}clearTimeout(wm.to)}wm=null;stopPlay();if(tab==='sp')render()}
+function vWm(){
+  const x=wm,r=x.res,act=r?(r.ok?x.exp:(r.actual||x.act)):x.act,d=phDiff(phTok(x.exp),phTok(act));
+  const row=(l,a,bad)=>`<div class="pr"><span>${l}</span><div>${a.length?a.map(o=>`<b class="${bad&&!o.ok?'px':'po'}">${esc(o.p)}</b>`).join(''):'<b class="px">—</b>'}</div></div>`;
+  return `<div class="ov" onclick="if(event.target===this)wmClose()"><div class="mdl" role="dialog" aria-modal="true" aria-label="Luyện phát âm">
+  <button class="xb mx" onclick="wmClose()" aria-label="Đóng">${ic('x',18)}</button>
+  <div class="mut" style="font-size:12px;font-weight:600">Luyện phát âm</div>
+  <div class="row" style="justify-content:center;margin:10px 0 2px"><b style="font-size:24px">${esc(x.w)}</b>${spk(x.w)}</div>
+  ${x.exp?`<div class="mut" style="font-family:ui-monospace,Menlo,monospace;font-size:13px">/${esc(x.exp)}/</div>`:''}
+  ${x.vi?`<div style="font-size:13px;font-weight:600;margin-top:4px">${esc(x.vi)}</div>`:''}
+  ${x.exp?`<div class="pbox"><div class="mut" style="font-size:10.5px;font-weight:700;letter-spacing:.5px">${r&&r.ok?'LẦN ĐỌC MỚI':'LỖI CỦA BẠN'}</div>${row('MẪU',d.A,false)}${row('BẠN',d.B,true)}</div>`:'<div style="height:12px"></div>'}
+  ${r?`<p class="${r.ok?'msg':'err'}" style="${r.ok?'color:var(--ok);font-weight:700;':''}margin:0 0 12px">${r.ok?'Phát âm tốt! ':'Chưa chuẩn, hãy nghe mẫu rồi thử lại. '}(${r.score}/100)</p>`:''}
+  ${x.err?`<p class="err">${esc(x.err)}</p>`:''}
+  ${sp.blob&&x.s!=null?`<button class="lnk" style="margin-bottom:12px" onclick="playSeg(${x.s},${x.e})">${ic('play',13)} Nghe bản ghi của bạn</button>`:''}
+  <button class="btn" ${x.busy?'disabled':''} onclick="wmToggle()">${x.busy?'Đang chấm…':x.rec?'Dừng và chấm':'Ghi âm ngay'}</button>
+  <p class="mut" style="font-size:11.5px;margin:10px 0 0">${x.rec?'Đang ghi âm, hãy đọc to từ này…':'Nhấn “Ghi âm ngay” rồi đọc từ trên.'}</p></div></div>`;
+}
+async function wmToggle(){
+  const m=wm;if(!m||m.busy)return;
+  if(m.rec){m.mr.stop();return}
+  try{
+    const st=await navigator.mediaDevices.getUserMedia({audio:true}),ch=[];
+    const mt=['audio/webm;codecs=opus','audio/webm','audio/mp4'].find(t=>window.MediaRecorder&&MediaRecorder.isTypeSupported(t))||'';
+    m.mr=new MediaRecorder(st,mt?{mimeType:mt}:{});
+    m.mr.ondataavailable=e=>{if(e.data.size)ch.push(e.data)};
+    m.mr.onstop=()=>{st.getTracks().forEach(t=>t.stop());clearTimeout(m.to);m.rec=false;if(m.cancel)return;wmSend(m,new Blob(ch,{type:m.mr.mimeType||mt||'audio/webm'}))};
+    m.mr.start();m.rec=true;m.err='';m.res=null;stopPlay();
+    m.to=setTimeout(()=>{if(m.mr.state==='recording')m.mr.stop()},6000);render();
+  }catch(e){m.err='Không mở được micro. Hãy cho phép quyền micro.';render()}
+}
+async function wmSend(m,blob){
+  m.busy=true;m.err='';render();
+  const fd=new FormData();fd.append('file',blob,'w.'+(blob.type.includes('mp4')?'m4a':'webm'));fd.append('word',m.w);
+  try{
+    const job=await api('/assess/word',{method:'POST',body:fd});
+    for(let i=0,nf=0;i<80&&!m.res;i++){
+      await new Promise(r=>setTimeout(r,1500));if(wm!==m)return;
+      let q;try{q=await api('/assess/'+job.job_id);nf=0}catch(e){if(e.net&&++nf<6)continue;throw e}
+      if(q.status==='done')m.res=q.result;
+      else if(q.status==='error')throw new Error(q.error||'Chấm thất bại');
+    }
+    if(!m.res)throw new Error('quá thời gian chờ');
+  }catch(e){if(!e.auth)m.err='Không chấm được: '+e.message}
+  m.busy=false;if(wm===m)render();
 }
 async function spToggle(){
   if(sp.rec){sp.mr.stop();return}
@@ -672,9 +1078,9 @@ async function spToggle(){
     const mt=['audio/webm;codecs=opus','audio/webm','audio/mp4'].find(t=>window.MediaRecorder&&MediaRecorder.isTypeSupported(t))||'';
     sp.chunks=[];sp.mr=new MediaRecorder(st,mt?{mimeType:mt}:{});
     sp.mr.ondataavailable=e=>{if(e.data.size)sp.chunks.push(e.data)};
-    sp.mr.onstop=()=>{st.getTracks().forEach(t=>t.stop());clearInterval(sp.timer);sp.rec=false;spSend(new Blob(sp.chunks,{type:sp.mr.mimeType||mt||'audio/webm'}))};
-    sp.mr.start();sp.rec=true;sp.err='';sp.res=null;sp.t0=Date.now();render();
-    sp.timer=setInterval(()=>{const s=Math.floor((Date.now()-sp.t0)/1000),e=$('#sptime');if(e)e.textContent=Math.floor(s/60)+':'+String(s%60).padStart(2,'0');if(s>=170&&sp.mr.state==='recording')sp.mr.stop()},500);
+    sp.mr.onstop=()=>{st.getTracks().forEach(t=>t.stop());clearInterval(sp.timer);sp.rec=false;sp.paused=false;sp.hrec=null;plStop(true);sp.blob=new Blob(sp.chunks,{type:sp.mr.mimeType||mt||'audio/webm'});sp.buf=null;sp.why={};wmClose();spSend(sp.blob)};
+    sp.mr.start();sp.rec=true;sp.paused=false;sp.acc=0;sp.seg=Date.now();sp.err='';sp.res=null;sp.hrec=null;sp.t0=Date.now();render();
+    sp.timer=setInterval(()=>{const ms=spEl(),e=$('#sptime');if(e)e.textContent=spFmt(ms);if(ms>=170000&&sp.mr.state!=='inactive')sp.mr.stop()},500);
   }catch(e){sp.err='Không mở được micro. Hãy cho phép quyền micro (trang phải chạy bằng HTTPS).';render()}
 }
 async function spSend(blob){
@@ -690,20 +1096,48 @@ async function spSend(blob){
     // 2) hỏi kết quả mỗi 2 giây (chịu được vài lần rớt mạng ngắn)
     let netFails=0;
     for(;;){
-      await new Promise(r=>setTimeout(r,2000));
+      await new Promise(r=>setTimeout(r,1000));
       let s2;
       try{s2=await api('/assess/'+job.job_id,{signal:ctl.signal});netFails=0}
       catch(e){if(e.net&&++netFails<8)continue;throw e}
-      if(s2.status==='done'){sp.res=s2.result;break}
+      if(s2.status==='done'){sp.res=s2.result;sp.res.jobId=job.job_id;break}
       if(s2.status==='error')throw new Error(s2.error||'Chấm điểm thất bại');
       if(s2.ahead!==sp.ahead){sp.ahead=s2.ahead;render()}
     }
     S.speaks=[{t:Date.now(),part:sp.part,overall:sp.res.overall},...(S.speaks||[])].slice(0,30);save();
+    spHAdd(q,blob);
   }catch(e){
     if(e.net&&DEV_CFG)sp.cfg=true;
     if(!e.auth)sp.err='Không chấm được: '+(e.name==='AbortError'?'quá thời gian chờ':e.message);
+    if(e.name==='AbortError'||e.net)api('/assess/cancel',{method:'POST'}).catch(()=>{});  // đừng để job mồ côi chặn lần sau
   }
   clearTimeout(to);sp.busy=false;sp.ahead=null;render();
+}
+async function spImprove(){
+  const r=sp.res;if(!r||!r.jobId||r.impBusy)return;
+  r.impBusy=true;r.impErr='';render();
+  try{r.imp=await api('/assess/'+r.jobId+'/improve',{method:'POST'});const h=SPH.list.find(x=>x.res===r);if(h)spHPut(h)}
+  catch(e){if(!e.auth)r.impErr=e.message}
+  r.impBusy=false;render();
+}
+function spImproveCard(r){
+  if(!r.jobId||!r.transcript)return '';
+  const m=r.imp;
+  if(!m)return `<div class="card"><b class="t">Cải thiện câu trả lời</b>
+    <p class="mut" style="font-size:12.5px">AI viết lại câu trả lời của bạn ở mức band cao hơn, giữ nguyên ý của bạn, kèm giải thích thay đổi và cụm từ nên học.</p>`
+    +(r.impBusy?`<div class="spin"></div><p class="mut" style="text-align:center">Đang viết lại… khoảng 5–15 giây</p>`:`<button class="btn" onclick="spImprove()">Cải thiện câu trả lời của tôi</button>`)
+    +(r.impErr?`<p class="err" style="margin:10px 0 0">${esc(r.impErr)}</p>`:'')+`</div>`;
+  return `<div class="card"><div class="row" style="justify-content:space-between"><b class="t" style="margin:0">Bản cải thiện · mục tiêu band ${bnd(m.target)}</b>${spk(m.improved_answer)}</div>
+    <p style="margin-top:10px;white-space:pre-wrap">${esc(m.improved_answer)}</p>`
+    +(m.tip_vi?`<p class="mut" style="font-size:12.5px">${esc(m.tip_vi)}</p>`:'')
+    +((m.key_changes||[]).length?`<hr><b class="t">Những thay đổi chính</b>`+m.key_changes.map(c=>`<div class="li"><div><span style="text-decoration:line-through;color:var(--bad)">${esc(c.before)}</span><br><b style="color:var(--ok,#1a9d5a)">${esc(c.after)}</b><br><span class="mut" style="font-size:12px">${esc(c.why_vi)}</span></div></div>`).join(''):'')
+    +((m.useful_phrases||[]).length?`<hr><b class="t">Cụm từ nên học</b>`+m.useful_phrases.map(p=>`<div class="li"><div><b>${esc(p.phrase)}</b><br><span class="mut" style="font-size:12px">${esc(p.meaning_vi)}</span></div>${spk(p.phrase)}</div>`).join(''):'')
+    +`<button class="btn s sm" style="margin-top:14px" onclick="spImprove2()">Viết lại bản khác</button></div>`;
+}
+function spImprove2(){if(sp.res){sp.res.imp=null;spImprove()}}
+async function spCancel(){
+  try{await api('/assess/cancel',{method:'POST'});sp.err=''}catch(e){sp.err=e.message}
+  render();
 }
 async function spChangePw(){
   const o=prompt('Nhập mật khẩu hiện tại:');if(o===null)return;
@@ -712,10 +1146,564 @@ async function spChangePw(){
   catch(e){alert(e.message)}
 }
 async function spDelAcc(){
-  if(!confirm('Xóa vĩnh viễn tài khoản và dữ liệu luyện nói trên máy chủ? Sổ từ vựng trên máy bạn không bị ảnh hưởng.'))return;
-  try{await api('/me',{method:'DELETE'});spLogout();alert('Đã xóa tài khoản.');render()}
+  if(!confirm('Xóa vĩnh viễn tài khoản và dữ liệu luyện nói trên máy chủ, cùng lịch sử bài nói, bản ghi âm và bài Writing đã lưu trên máy này? Sổ từ vựng trên máy bạn không bị ảnh hưởng.'))return;
+  try{const un=spUser();await api('/me',{method:'DELETE'});await spHPurgeUser(un);await wrHPurgeUser(un);spLogout();alert('Đã xóa tài khoản.');render()}
   catch(e){alert(e.message)}
 }
+
+/* ================= Writing (IELTS) =================
+   Chấm theo 4 tiêu chí công khai của IELTS (Task Achievement/Response, Coherence & Cohesion, Lexical Resource,
+   Grammatical Range & Accuracy), sửa lỗi ngay trong bài và viết lại bản cải thiện. Bài viết không lưu trên máy chủ. */
+const WR_KINDS={
+  ac1:{short:'Task 1 · Academic',crit:'Task Achievement',min:150},
+  gt1:{short:'Task 1 · General',crit:'Task Achievement',min:150},
+  t2:{short:'Task 2',crit:'Task Response',min:250}};
+const WR_TYPES={grammar:'Ngữ pháp',vocabulary:'Từ vựng',cohesion:'Liên kết',punctuation:'Dấu câu',spelling:'Chính tả',task:'Nội dung',style:'Văn phong'};
+const WR_T2_END=' Give reasons for your answer and include any relevant examples from your own knowledge or experience. Write at least 250 words.';
+const WR_SAMPLES={
+  t2:['Some people believe that studying abroad is the best way to receive a good education, while others think it is better to study in one’s own country. Discuss both views and give your own opinion.',
+      'In many countries, people are spending more time on social media than talking to each other face to face. Do the advantages of this development outweigh the disadvantages?',
+      'Some people think that governments should spend money on public transport rather than building more roads. To what extent do you agree or disagree?',
+      'Many people now work from home rather than in an office. What are the advantages and disadvantages of this trend?',
+      'Nowadays many young people leave school without any practical skills. What problems does this cause, and what can be done to solve them?',
+      'Some people say that children should start learning a foreign language in primary school. To what extent do you agree or disagree?'].map(s=>'Write about the following topic:\n\n'+s+'\n\n'+WR_T2_END.trim()),
+  gt1:['You recently bought a piece of equipment for your home, but it stopped working after a week.\nWrite a letter to the shop manager. In your letter:\n• describe the problem\n• explain what happened when you contacted the shop\n• say what you would like the manager to do\n\nWrite at least 150 words. You do NOT need to write any addresses.\nBegin your letter as follows: Dear Sir or Madam,',
+       'A friend has invited you to stay at their home for a holiday next month, but you cannot go.\nWrite a letter to your friend. In your letter:\n• thank your friend for the invitation\n• explain why you cannot go\n• suggest another time to meet\n\nWrite at least 150 words. You do NOT need to write any addresses.\nBegin your letter as follows: Dear …,',
+       'You work for a company and have noticed that the office is too noisy to work in.\nWrite a letter to your manager. In your letter:\n• describe the problem\n• explain how it affects your work\n• suggest what could be done\n\nWrite at least 150 words. You do NOT need to write any addresses.\nBegin your letter as follows: Dear Sir or Madam,']};
+const WR_WORD=/[A-Za-z0-9]+(?:['’\-][A-Za-z0-9]+)*/g;
+const wrWords=s=>((s||'').match(WR_WORD)||[]).length;
+let wr={kind:'t2',q:'',essay:'',img:null,imgUrl:'',busy:false,err:'',cur:null,hist:false,why:{}};
+try{const d=JSON.parse(localStorage.getItem('wr_draft')||'{}');if(WR_KINDS[d.kind])wr.kind=d.kind;wr.q=String(d.q||'');wr.essay=String(d.essay||'')}catch(e){}
+const wrSaveDraft=()=>{try{localStorage.setItem('wr_draft',JSON.stringify({kind:wr.kind,q:wr.q,essay:wr.essay}))}catch(e){}};
+function wrReset(){wr.cur=null;wr.hist=false;wr.err='';wr.why={}}
+
+/* ---- Lịch sử Writing (IndexedDB, chỉ trên máy bạn) ---- */
+const WR_HMAX=100;
+const WRH={list:[],ready:false,err:false,db:null};
+const wrdb=()=>WRH.db||(WRH.db=new Promise((ok,no)=>{try{const r=indexedDB.open('vocabook_wr',1);r.onupgradeneeded=()=>r.result.createObjectStore('h',{keyPath:'id'});r.onsuccess=()=>ok(r.result);r.onerror=()=>no(r.error)}catch(e){no(e)}}));
+const wrTx=(mode,fn)=>wrdb().then(d=>new Promise((ok,no)=>{const tx=d.transaction('h',mode);let o;try{o=fn(tx.objectStore('h'))}catch(e){no(e);return}tx.oncomplete=()=>ok(o&&o.result);tx.onerror=tx.onabort=()=>no(tx.error)}));
+const wrL=()=>WRH.list.filter(r=>r.u===spUser());
+function wrRefresh(){const a=document.activeElement&&document.activeElement.tagName;if(tab==='wr'&&!wr.busy&&a!=='INPUT'&&a!=='TEXTAREA'&&a!=='SELECT')render()}
+wrTx('readonly',s=>s.getAll()).then(a=>{WRH.list=(a||[]).sort((x,y)=>y.t-x.t);WRH.ready=true;wrRefresh()}).catch(()=>{WRH.ready=true;WRH.err=true;wrRefresh()});
+function wrHAdd(c){
+  const rec={id:'w'+Date.now().toString(36)+uid(),t:Date.now(),u:spUser(),kind:c.kind,q:c.q,essay:c.essay,res:c.res};
+  WRH.list=[rec,...WRH.list];c.id=rec.id;c.t=rec.t;
+  wrTx('readwrite',s=>s.put(rec)).catch(()=>{WRH.err=true});
+  if(WRH.list.length>WR_HMAX){const drop=WRH.list.slice(WR_HMAX);WRH.list=WRH.list.slice(0,WR_HMAX);wrTx('readwrite',s=>drop.forEach(x=>s.delete(x.id))).catch(()=>{})}
+}
+function wrHDel(id){
+  if(!confirm('Xóa bài viết này khỏi lịch sử?'))return;
+  WRH.list=WRH.list.filter(x=>x.id!==id);wrTx('readwrite',s=>s.delete(id)).catch(()=>{});
+  if(wr.cur&&wr.cur.id===id)wr.cur=null;render();
+}
+function wrHClear(){
+  const mine=wrL();if(!mine.length||!confirm('Xóa toàn bộ '+mine.length+' bài Writing đã lưu của bạn trên máy này?'))return;
+  WRH.list=WRH.list.filter(x=>x.u!==spUser());wrTx('readwrite',s=>mine.forEach(x=>s.delete(x.id))).catch(()=>{});render();
+}
+async function wrHPurgeUser(u){
+  const mine=WRH.list.filter(x=>x.u===u);WRH.list=WRH.list.filter(x=>x.u!==u);
+  try{await wrTx('readwrite',s=>mine.forEach(x=>s.delete(x.id)))}catch(e){}
+}
+function wrOpen(id){
+  const r=WRH.list.find(x=>x.id===id);if(!r)return;
+  wr.cur={id:r.id,t:r.t,kind:r.kind,q:r.q,essay:r.essay,res:r.res};wr.why={};wr.err='';render();window.scrollTo(0,0);
+}
+
+/* ---- Nhập bài ---- */
+function wrSetKind(k){wr.kind=k;wr.err='';wrSaveDraft();render()}
+function wrSample(){
+  const a=WR_SAMPLES[wr.kind];if(!a)return;
+  let q;do{q=a[Math.floor(Math.random()*a.length)]}while(a.length>1&&q===wr.q);
+  wr.q=q;wrSaveDraft();render();
+}
+function wrWc(){const n=wrWords(wr.essay),m=WR_KINDS[wr.kind].min;return{n,m,ok:n>=m}}
+function wrCount(){
+  const {n,m,ok}=wrWc(),e=$('#wr_wc'),b=$('#wr_go');
+  if(e){e.textContent=n+' từ · tối thiểu '+m+(ok?' ✓':' (còn thiếu '+(m-n)+')');e.className='wcn '+(ok?'ok':'w')}
+  if(b)b.disabled=wr.busy||n<30;
+}
+function wrPickImg(inp){
+  const f=inp.files&&inp.files[0];inp.value='';if(!f)return;
+  if(!/^image\//.test(f.type)){wr.err='Hãy chọn một file ảnh (JPG, PNG hoặc WEBP).';render();return}
+  const url=URL.createObjectURL(f),im=new Image();
+  im.onload=()=>{   // thu nhỏ còn tối đa 1600px để gửi nhanh
+    const s=Math.min(1,1600/Math.max(im.width,im.height)),c=document.createElement('canvas');
+    c.width=Math.max(1,Math.round(im.width*s));c.height=Math.max(1,Math.round(im.height*s));
+    const x=c.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,c.width,c.height);x.drawImage(im,0,0,c.width,c.height);URL.revokeObjectURL(url);
+    c.toBlob(b=>{if(!b){wr.err='Không xử lý được ảnh này.';render();return}
+      if(wr.imgUrl)URL.revokeObjectURL(wr.imgUrl);wr.img=b;wr.imgUrl=URL.createObjectURL(b);wr.err='';render()},'image/jpeg',.85)};
+  im.onerror=()=>{URL.revokeObjectURL(url);wr.err='Không đọc được ảnh này.';render()};
+  im.src=url;
+}
+function wrImgClear(){if(wr.imgUrl)URL.revokeObjectURL(wr.imgUrl);wr.img=null;wr.imgUrl='';render()}
+function wrNew(){wr.q='';wr.essay='';wrImgClear();wr.cur=null;wr.hist=false;wr.err='';wr.why={};wrSaveDraft();render();window.scrollTo(0,0)}
+function wrEdit(){const c=wr.cur;if(!c)return;wr.kind=c.kind;wr.q=c.q;wr.essay=c.essay;wr.cur=null;wr.hist=false;wr.why={};wrSaveDraft();render();window.scrollTo(0,0)}
+async function wrSubmit(){
+  if(wr.busy)return;
+  const q=wr.q.trim(),e=wr.essay.trim();
+  if(q.length<10){wr.err='Hãy nhập đề bài (ít nhất 10 ký tự).';render();return}
+  if(wrWords(e)<30){wr.err='Bài viết quá ngắn, cần ít nhất 30 từ để chấm.';render();return}
+  const kind=wr.kind;wr.busy=true;wr.err='';render();
+  const fd=new FormData();fd.append('kind',kind);fd.append('question',q);fd.append('essay',e);
+  if(kind==='ac1'&&wr.img)fd.append('image',wr.img,'chart.jpg');
+  const ctl=new AbortController(),to=setTimeout(()=>ctl.abort(),180000);
+  try{
+    const res=await api('/writing/assess',{method:'POST',body:fd,signal:ctl.signal});
+    const c={kind,q,essay:e,res};wrHAdd(c);wr.cur=c;wr.why={};
+  }catch(er){
+    if(er.net&&DEV_CFG)sp.cfg=true;
+    if(!er.auth)wr.err='Không chấm được: '+(er.name==='AbortError'?'quá thời gian chờ':er.message);
+  }
+  clearTimeout(to);wr.busy=false;render();window.scrollTo(0,0);
+}
+
+/* ---- Giao diện ---- */
+function vWr(){
+  const c=spCfg();
+  if(!AU)return head('Chấm IELTS Writing')+`<div class="pg">`+vAuth()+spCfgCard(c)+`</div>`;
+  const hb=ibtn('clock',"wr.cur=null;wr.hist=!wr.hist;render()",'Lịch sử bài viết',wr.hist);
+  let h=head('Chấm IELTS Writing',hb)+`<div class="pg">`;
+  h+=`<div class="strip">${ic('shield',15)}<span>Đã đăng nhập · ${esc(AU.user.username)}${isAdmin()?' (admin)':''}</span><button class="lnk" ${wr.busy?'disabled':''} onclick="spLogout();render()">Đăng xuất</button></div>`;
+  h+=spCfgCard(c);
+  h+=wr.cur?vWrResult():(wr.hist?vWrHist():vWrForm());
+  return h+`</div>`;
+}
+function vWrForm(){
+  const k=WR_KINDS[wr.kind],{n,m,ok}=wrWc();
+  if(wr.busy)return `<div class="micw"><div class="spin"></div><b>Đang chấm bài…</b><p>Giám khảo AI đang chấm 4 tiêu chí, sửa lỗi và viết bản cải thiện. Có thể mất 20–60 giây. Đừng đóng ứng dụng.</p></div>`;
+  let h=`<div class="seg">${Object.entries(WR_KINDS).map(([id,x])=>`<button class="${wr.kind===id?'on':''}" onclick="wrSetKind('${id}')">${x.short}</button>`).join('')}</div>
+  <div class="sub"><span>Đề bài</span>${WR_SAMPLES[wr.kind]?`<button class="lnk" onclick="wrSample()">${ic('shuf',13)} Gợi ý đề</button>`:''}</div>
+  <textarea class="f" id="wr_q" rows="5" oninput="wr.q=this.value;wrSaveDraft()" placeholder="${wr.kind==='ac1'?'Dán đề bài, ví dụ: The chart below shows… Summarise the information by selecting and reporting the main features…':'Dán đề bài vào đây, hoặc bấm “Gợi ý đề”.'}">${esc(wr.q)}</textarea>`;
+  if(wr.kind==='ac1')h+=`<label class="fl">Ảnh biểu đồ / bảng số liệu</label>`+(wr.imgUrl
+    ?`<div class="row" style="align-items:flex-start;margin-bottom:12px"><img src="${wr.imgUrl}" alt="Biểu đồ" style="max-width:min(100%,320px);max-height:220px;border-radius:12px;border:1px solid var(--bd)"><button class="lnk" onclick="wrImgClear()">Xóa ảnh</button></div>`
+    :`<label class="btn s sm" style="display:inline-flex;gap:8px;cursor:pointer;margin-bottom:6px">${ic('up',16)} Chọn ảnh<input type="file" accept="image/*" hidden onchange="wrPickImg(this)"></label><p class="msg">Nên đính kèm ảnh để chấm đúng độ chính xác số liệu của Task Achievement.</p>`);
+  h+=`<label class="fl" for="wr_e">Bài viết của bạn</label>
+  <textarea class="f" id="wr_e" rows="15" oninput="wr.essay=this.value;wrCount();wrSaveDraft()" placeholder="Viết bài bằng tiếng Anh ở đây…">${esc(wr.essay)}</textarea>
+  <div class="wcn ${ok?'ok':'w'}" id="wr_wc">${n} từ · tối thiểu ${m}${ok?' ✓':' (còn thiếu '+(m-n)+')'}</div>`;
+  if(wr.err)h+=`<p class="err">${esc(wr.err)}</p>`;
+  h+=`<button class="btn" id="wr_go" ${n<30?'disabled':''} onclick="wrSubmit()">Chấm bài</button>
+  <div class="note">${ic('shield',14)}<span>Chấm theo 4 tiêu chí công khai của IELTS Writing. Band chỉ là ước lượng tham khảo, không phải điểm IELTS chính thức. Bài viết được gửi tới dịch vụ AI để chấm và không được lưu trên máy chủ.</span></div>`;
+  return h;
+}
+function vWrHist(){
+  const L=wrL();
+  let h=`<div class="row" style="justify-content:space-between;margin-bottom:12px"><button class="lnk" onclick="wr.hist=false;render()">${ic('back',14)} Viết bài mới</button>${L.length?`<button class="lnk" style="color:var(--bad)" onclick="wrHClear()">Xóa hết</button>`:''}</div>`;
+  if(WRH.err&&!L.length)return h+`<div class="card"><p class="mut" style="font-size:12.5px">Trình duyệt này không cho lưu lịch sử bài viết (có thể đang ở chế độ riêng tư).</p></div>`;
+  if(!L.length)return h+`<div class="card"><p class="mut" style="font-size:12.5px">Chưa có bài nào. Mỗi bài được chấm sẽ lưu ở đây cùng điểm, các lỗi đã sửa và bản cải thiện. Dữ liệu chỉ nằm trên máy bạn.</p></div>`;
+  return h+`<p class="msg">${L.length} bài đã chấm</p>`+L.map(r=>`<div class="card"><div class="row" style="justify-content:space-between"><span class="tg">${WR_KINDS[r.kind].short}</span><b>Band ${bnd(r.res.overall)}</b></div>
+    <div class="hgq">${esc(r.q.replace(/^Write about the following topic:\s*/i,''))}</div>
+    <div class="mut" style="font-size:12px">${r.res.words} từ · ${spDt(r.t)}</div>
+    <div class="row" style="margin-top:10px;gap:16px"><button class="lnk" data-id="${esc(r.id)}" onclick="wrOpen(this.dataset.id)">Xem lại</button><button class="lnk" style="color:var(--bad)" data-id="${esc(r.id)}" onclick="wrHDel(this.dataset.id)" aria-label="Xóa bài này">${ic('trash',14)}</button></div></div>`).join('');
+}
+function wrAnnot(c){
+  const t=c.essay,cs=c.res.corrections||[],hit=[],rest=[];
+  cs.forEach((x,i)=>{const o=x.original,k=o?t.toLowerCase().indexOf(o.toLowerCase()):-1;
+    if(k<0||hit.some(h=>k<h.e&&k+o.length>h.k))rest.push(x);else hit.push({k,e:k+o.length,c:x,i})});
+  hit.sort((a,b)=>a.k-b.k);
+  let d='',p=0;
+  hit.forEach(h=>{d+=esc(t.slice(p,h.k))+`<s class="del">${esc(t.slice(h.k,h.e))}</s> <span class="ins">${esc(h.c.better)}</span> <button class="lnk" onclick="wr.why[${h.i}]=!wr.why[${h.i}];render()">giải thích</button>`+(wr.why[h.i]?`<span class="why"><b>${esc(WR_TYPES[h.c.type]||'')}</b> · ${esc(h.c.why_vi)}</span>`:' ');p=h.e});
+  d+=esc(t.slice(p));
+  const cnt={};cs.forEach(x=>{cnt[x.type]=(cnt[x.type]||0)+1});
+  const chips=Object.entries(cnt).sort((a,b)=>b[1]-a[1]).map(([k,n])=>`<span class="pill">${esc(WR_TYPES[k]||k)} ${n}</span>`).join(' ');
+  return `<div class="card"><b class="t">Bài viết của bạn · ${cs.length} chỗ cần sửa</b>${chips?`<div class="wrq">${chips}</div>`:''}
+    <p class="mut" style="font-size:12px">Chữ <s class="del">gạch đỏ</s> là phần cần sửa, chữ <span class="ins">xanh</span> là cách viết tốt hơn.</p>
+    <div class="dv" style="white-space:pre-wrap">${d}</div>`
+    +rest.map(x=>`<div class="li"><div><span class="mut">${esc(x.original)}</span><br><b>${esc(x.better)}</b><br><span class="mut" style="font-size:12px">${esc(WR_TYPES[x.type]||'')} · ${esc(x.why_vi)}</span></div></div>`).join('')+`</div>`;
+}
+function wrCopy(b){
+  const s=wr.cur&&wr.cur.res.improved.essay;if(!s)return;
+  const done=()=>{const o=b.innerHTML;b.textContent='Đã sao chép';setTimeout(()=>{b.innerHTML=o},1500)};
+  try{navigator.clipboard.writeText(s).then(done,()=>{})}catch(e){}
+}
+function vWrResult(){
+  const c=wr.cur,r=c.res,k=WR_KINDS[c.kind]||WR_KINDS.t2,B=r.bands||{},N=r.notes||{},im=r.improved||{};
+  const rows=[['task',r.task_crit||k.crit],['coherence','Coherence & Cohesion'],['lexical','Lexical Resource'],['grammar','Grammatical Range & Accuracy']];
+  let h=`<div class="row" style="justify-content:space-between;margin-bottom:12px"><button class="lnk" onclick="wr.cur=null;render()">${ic('back',14)} ${wr.hist?'Về lịch sử':'Quay lại bài viết'}</button><span class="mut" style="font-size:12px">${k.short}${c.t?' · '+spDt(c.t):''}</span></div>`;
+  h+=`<div class="card"><div class="band xl" style="margin-bottom:18px"><b>${bnd(r.overall)}</b><small>BAND ƯỚC TÍNH</small></div>`
+    +rows.map(([key,n])=>`<div class="crit"><div class="row"><span>${esc(n)}</span><b>${bnd(B[key])}</b></div><div class="pbar"><i style="width:${(B[key]||0)/9*100}%"></i></div>${N[key]?`<p class="mut" style="font-size:12.5px;margin:6px 0 10px">${esc(N[key])}</p>`:''}</div>`).join('')
+    +`<p class="mut" style="font-size:12px;margin-top:6px">${r.words} từ (tối thiểu ${r.min_words}). Band tổng là trung bình 4 tiêu chí, làm tròn đến 0.5.</p></div>`;
+  (r.warnings||[]).forEach(w=>{h+=`<p class="err" style="margin:0 2px 14px">${esc(w)}</p>`});
+  if((r.strengths_vi||[]).length||(r.priorities_vi||[]).length)
+    h+=`<div class="card">`+((r.strengths_vi||[]).length?`<b class="t">Điểm tốt</b>`+r.strengths_vi.map(s=>`<div class="li"><div>${esc(s)}</div></div>`).join(''):'')
+      +((r.priorities_vi||[]).length?`<b class="t" style="margin-top:14px">Ưu tiên sửa trước để tăng band</b>`+r.priorities_vi.map((s,i)=>`<div class="li"><div><b>${i+1}.</b> ${esc(s)}</div></div>`).join(''):'')+`</div>`;
+  h+=wrAnnot(c);
+  h+=`<div class="card"><div class="row" style="justify-content:space-between"><b class="t" style="margin:0">Bản cải thiện · mục tiêu band ${bnd(im.target)}</b><span class="row" style="gap:6px;flex:none">${spk(im.essay)}<button class="lnk" onclick="wrCopy(this)">Sao chép</button></span></div>
+    <p class="mut" style="font-size:12px;margin:6px 0 0">${im.words||wrWords(im.essay)} từ · giữ nguyên ý và cấu trúc của bạn</p>
+    <p style="margin-top:10px;white-space:pre-wrap">${esc(im.essay)}</p>`
+    +(im.tip_vi?`<p class="mut" style="font-size:12.5px">${esc(im.tip_vi)}</p>`:'')
+    +((im.key_changes||[]).length?`<hr><b class="t">Những thay đổi chính</b>`+im.key_changes.map(x=>`<div class="li"><div><span style="text-decoration:line-through;color:var(--bad)">${esc(x.before)}</span><br><b style="color:var(--ok)">${esc(x.after)}</b><br><span class="mut" style="font-size:12px">${esc(x.why_vi)}</span></div></div>`).join(''):'')
+    +((im.useful_phrases||[]).length?`<hr><b class="t">Cụm từ nên học</b>`+im.useful_phrases.map(x=>`<div class="li"><div><b>${esc(x.phrase)}</b><br><span class="mut" style="font-size:12px">${esc(x.meaning_vi)}</span></div>${spk(x.phrase)}</div>`).join(''):'')+`</div>`;
+  h+=`<div class="row" style="margin-top:6px"><button class="btn s" onclick="wrEdit()">Sửa và chấm lại</button><button class="btn" onclick="wrNew()">Viết bài mới</button></div>`;
+  return h+`<div class="note">${ic('shield',14)}<span>Band ước lượng chỉ mang tính tham khảo, không phải điểm IELTS chính thức.</span></div>`;
+}
+
+/* ================= Shadowing =================
+   Nghe từng câu trong video YouTube -> nhại theo -> chấm phát âm (OpenPronounce trên máy chủ).
+   Trình phát theo câu, gộp câu, nhập phụ đề: port từ shadowing_space. */
+let SH={lessons:[],cur:null};
+try{SH.lessons=JSON.parse(localStorage.getItem('sh_lessons')||'[]')}catch(e){}
+const shSave=()=>{try{localStorage.setItem('sh_lessons',JSON.stringify(SH.lessons))}catch(e){}};
+let sh={add:false,url:'',txt:'',title:'',busy:false,err:'',L:null,i:0,tr:true,speed:1,rep:1,auto:false,set:false,
+  playing:false,k:0,ready:false,pl:null,tok:0,w:null,rec:false,mr:null,recs:{},res:{},scoring:false,ahead:null,msg:'',trBusy:false,trOff:false};
+try{Object.assign(sh,JSON.parse(localStorage.getItem('sh_cfg')||'{}'))}catch(e){}
+const shCfgSave=()=>{try{localStorage.setItem('sh_cfg',JSON.stringify({tr:sh.tr,speed:sh.speed,rep:sh.rep,auto:sh.auto}))}catch(e){}};
+const SH_SPEEDS=[.5,.75,1,1.25,1.5],SH_REPS=[1,2,3,5],YT_RATES=[.25,.5,.75,1,1.25,1.5,1.75,2];
+const shFmt=n=>String(+n.toFixed(2));
+const shSnap=r=>YT_RATES.reduce((a,b)=>Math.abs(b-r)<Math.abs(a-r)?b:a);
+
+/* ---- Nhập phụ đề: link YouTube, SRT/VTT, JSON (kể cả file xuất từ extension Shadowing Space) ---- */
+function shVid(t){
+  t=(t||'').trim();if(/^[\w-]{11}$/.test(t))return t;
+  let u;try{u=new URL(/:\/\//.test(t)?t:'https://'+t)}catch(e){return null}
+  const h=u.hostname.replace(/^www\./,'').toLowerCase(),p=u.pathname.split('/').filter(Boolean);let c='';
+  if(h==='youtu.be')c=p[0]||'';
+  else if(['youtube.com','m.youtube.com','music.youtube.com'].includes(h))c=u.pathname==='/watch'?(u.searchParams.get('v')||''):(['embed','shorts','live','v'].includes(p[0])?p[1]||'':'');
+  return /^[\w-]{11}$/.test(c)?c:null;
+}
+const SH_END=/[.?!。？！…]["'”’)\]]*\s*$/;
+function shMerge(c){   // gộp các dòng phụ đề thành câu: dừng ở dấu câu, quãng nghỉ >0,75s, dài >8s hoặc >220 ký tự
+  const out=[];let b=[];
+  const flush=()=>{if(b.length)out.push({s:b[0].s,e:b[b.length-1].e,en:b.map(x=>x.t).join(' '),vi:''})};
+  for(const x of c){
+    if(b.length){const p=b[b.length-1],len=b.reduce((a,y)=>a+y.t.length,0)+b.length+x.t.length;
+      if(SH_END.test(p.t)||x.s-p.e>750||x.e-b[0].s>8000||len>220){flush();b=[]}}
+    b.push(x);
+  }
+  flush();return out;
+}
+function shTs(s){
+  const m=s.trim().replace(',','.').match(/^(?:(\d+):)?(\d+):(\d+)(?:\.(\d+))?$/);if(!m)return null;
+  return((+(m[1]||0))*3600+(+m[2])*60+(+m[3]))*1000+Math.round(parseFloat('0.'+(m[4]||'0'))*1000);
+}
+const shDec=s=>s.replace(/<[^>]+>/g,'').replace(/&nbsp;/g,' ').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'"').replace(/&#39;/g,"'").replace(/&amp;/g,'&').replace(/\[[^\]]{0,30}\]/g,' ').replace(/\s+/g,' ').trim();
+function shParseCues(txt){
+  const cues=[];
+  for(const blk of txt.replace(/^\uFEFF/,'').replace(/\r/g,'').split(/\n\s*\n/)){
+    const ls=blk.split('\n'),k=ls.findIndex(l=>l.includes('-->'));if(k<0)continue;
+    const m=ls[k].match(/([\d:.,]+)\s*-->\s*([\d:.,]+)/);if(!m)continue;
+    const s=shTs(m[1]),e=shTs(m[2]),t=shDec(ls.slice(k+1).join(' '));
+    if(s==null||e==null||!t)continue;
+    if(cues.length&&cues[cues.length-1].t===t&&s<=cues[cues.length-1].e){cues[cues.length-1].e=Math.max(cues[cues.length-1].e,e);continue}
+    cues.push({s,e:Math.max(e,s+300),t});
+  }
+  cues.sort((a,b)=>a.s-b.s);
+  for(let i=0;i<cues.length-1;i++)if(cues[i].e>cues[i+1].s)cues[i].e=Math.max(cues[i].s+300,cues[i+1].s);
+  return cues;
+}
+function shParseAny(txt){   // -> {segs, vid?, title?}
+  const t=txt.replace(/^\uFEFF/,'').trim();
+  if(t[0]==='{'||t[0]==='['){
+    let j;try{j=JSON.parse(t)}catch(e){throw new Error('Không đọc được JSON: '+e.message)}
+    if(j&&j.payload)j=j.payload;
+    const arr=Array.isArray(j)?j:(j&&j.segments);
+    if(!Array.isArray(arr))throw new Error('JSON không có danh sách câu (segments).');
+    const segs=arr.map(x=>({s:Math.round(x.startMs!=null?x.startMs:(x.start||0)*1000),e:Math.round(x.endMs!=null?x.endMs:(x.end||0)*1000),en:String(x.text||x.en||'').trim(),vi:String(x.vi||'').trim()})).filter(x=>x.en&&x.e>x.s);
+    if(!segs.length)throw new Error('JSON không có câu hợp lệ.');
+    segs.sort((a,b)=>a.s-b.s);
+    return{segs,vid:j&&j.video&&j.video.videoId,title:j&&j.video&&j.video.title};
+  }
+  const c=shParseCues(t);if(!c.length)throw new Error('Không nhận ra phụ đề. Hãy dán nội dung file .srt / .vtt hoặc JSON.');
+  return{segs:shMerge(c)};
+}
+function shAddLesson(o){
+  const L={id:uid(),vid:o.vid,title:(o.title||'').trim()||'Bài shadowing',segs:o.segs,idx:0,best:{},t:Date.now()};
+  SH.lessons.unshift(L);shSave();sh.add=false;sh.url=sh.txt=sh.title=sh.err='';return L;
+}
+async function shFetch(){
+  if(sh.busy)return;
+  if(!shVid(sh.url)){sh.err='Hãy dán link YouTube hợp lệ.';return render()}
+  if(!AU){sh.err='Cần đăng nhập (ở tab Speaking) để lấy phụ đề tự động. Hoặc dán phụ đề thủ công ở dưới.';return render()}
+  sh.busy=true;sh.err='';render();
+  try{
+    const d=await api('/shadow/transcript?url='+encodeURIComponent(sh.url));
+    const L=shAddLesson({vid:d.videoId,title:d.title,segs:d.segs.map(x=>({s:x.s,e:x.e,en:x.en,vi:x.vi||''}))});
+    sh.busy=false;shOpen(L.id);return;
+  }catch(e){if(!e.auth)sh.err=e.message}
+  sh.busy=false;render();
+}
+function shImport(){
+  try{
+    const r=shParseAny(sh.txt||'');
+    const vid=shVid(sh.url)||r.vid;
+    if(!vid)throw new Error('Hãy dán link video YouTube tương ứng với phụ đề.');
+    const L=shAddLesson({vid,title:sh.title||r.title,segs:r.segs});shOpen(L.id);
+  }catch(e){sh.err=e.message;render()}
+}
+function shFile(inp){
+  const f=inp.files&&inp.files[0];if(!f)return;
+  const r=new FileReader();r.onload=()=>{sh.txt=String(r.result||'');if(!sh.title)sh.title=f.name.replace(/\.[^.]+$/,'');render()};r.readAsText(f);
+}
+function shDel(id){
+  const L=SH.lessons.find(x=>x.id===id);if(!L||!confirm('Xóa bài “'+L.title+'”? Tiến độ và điểm của bài này cũng mất.'))return;
+  SH.lessons=SH.lessons.filter(x=>x.id!==id);shSave();render();
+}
+
+/* ---- Màn danh sách bài ---- */
+function vShList(){
+  let h=head('Shadowing',ibtn(sh.add?'x':'plus',`sh.add=!sh.add;sh.err='';render()`,sh.add?'Đóng':'Thêm bài',sh.add))+`<div class="pg">`;
+  if(sh.add){
+    h+=`<div class="card"><b class="t" style="font-size:16px">Thêm bài shadowing</b>
+    <p class="mut" style="font-size:12.5px;margin:4px 0 14px">Dán link video YouTube có phụ đề tiếng Anh. Phụ đề được chia thành từng câu để bạn nghe và nhại theo.</p>
+    <label class="fl" for="sh_url">Link YouTube</label>
+    <input class="f" id="sh_url" value="${esc(sh.url)}" placeholder="https://www.youtube.com/watch?v=…" autocapitalize="off" oninput="sh.url=this.value" onkeydown="if(event.key==='Enter')shFetch()">
+    <button class="btn" ${sh.busy?'disabled':''} onclick="shFetch()">${sh.busy?'Đang lấy phụ đề…':'Lấy phụ đề tự động'}</button>
+    <p class="mut" style="font-size:11.5px;margin:8px 0 0">Cần đăng nhập ở tab Speaking. Bản dịch tiếng Việt được lấy kèm nếu YouTube có.</p>
+    <div class="shsep"><span>hoặc nhập phụ đề thủ công</span></div>
+    <label class="fl" for="sh_ti">Tên bài (không bắt buộc)</label>
+    <input class="f" id="sh_ti" value="${esc(sh.title)}" oninput="sh.title=this.value">
+    <label class="fl" for="sh_tx">Phụ đề (SRT, VTT hoặc JSON từ extension Shadowing Space)</label>
+    <textarea class="f" id="sh_tx" rows="5" style="resize:vertical;font-weight:500;font-size:12.5px" oninput="sh.txt=this.value" placeholder="1&#10;00:00:01,000 --> 00:00:03,200&#10;Good morning.">${esc(sh.txt)}</textarea>
+    <div class="row" style="margin-bottom:12px"><label class="lnk" style="cursor:pointer">${ic('up',14)} Tải file lên<input type="file" accept=".srt,.vtt,.json,.txt" hidden onchange="shFile(this)"></label></div>
+    ${sh.err?`<p class="err">${esc(sh.err)}</p>`:''}
+    <button class="btn s" onclick="shImport()">Tạo bài từ phụ đề đã dán</button></div>`;
+  }
+  if(!SH.lessons.length&&!sh.add)h+=`<div class="empty">Chưa có bài shadowing nào. Nhấn dấu + để thêm video YouTube đầu tiên.</div>`;
+  h+=SH.lessons.map(L=>{
+    const done=Object.keys(L.best||{}).length;
+    return `<div class="card shcard" onclick="shOpen('${L.id}')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')shOpen('${L.id}')">
+      <img class="shth" src="https://i.ytimg.com/vi/${esc(L.vid)}/mqdefault.jpg" alt="" loading="lazy" onerror="this.style.visibility='hidden'">
+      <div class="shin"><b class="shct">${esc(L.title)}</b>
+      <div class="mut" style="font-size:12px;margin-top:3px">${L.segs.length} câu · đang ở câu ${Math.min((L.idx||0)+1,L.segs.length)}${done?` · đã chấm ${done}`:''}</div></div>
+      <button class="ib" onclick="event.stopPropagation();shDel('${L.id}')" aria-label="Xóa bài">${ic('trash',16)}</button></div>`;
+  }).join('');
+  if(!sh.add)h+=`<div class="hint">${ic('spark',16)}<span>Cách luyện: nghe một câu (có thể lặp nhiều lần, chậm lại), rồi bấm micro đọc nhại theo. Hệ thống chấm phát âm và chỉ ra từ cần sửa.</span></div>`;
+  return h+`</div>`;
+}
+
+/* ---- Màn luyện ---- */
+function vSh(){return sh.L?vShPractice():vShList()}
+function vShPractice(){
+  const L=sh.L;
+  return `<div class="shbar">${ibtn('back','shClose()','Quay lại')}<b class="shtt">${esc(L.title)}</b><span class="shcnt" id="shcnt"></span></div>
+  <div class="shbar" style="padding-top:0;justify-content:flex-end"><button class="shch" id="shtrb" onclick="sh.tr=!sh.tr;shCfgSave();shPaintTop();shNeedTr()">${ic('lang',14)}Bản dịch</button>
+  <button class="shch" id="shspd" onclick="sh.set=true;shPaintPop()" aria-label="Tốc độ và lặp">${ic('sliders',14)}<span id="shspt"></span></button></div>
+  <div id="shbox"><div id="shyt"></div><div id="shov"></div><div id="sherr"></div></div>
+  <div class="shctl" id="shctl"></div><div id="shrec"></div>
+  <div class="shl" id="shlist">${L.segs.map((sg,i)=>shItem(sg,i)).join('')}</div><div id="shpop"></div>`;
+}
+const shItem=(sg,i)=>{
+  const b=(sh.L.best||{})[i];
+  return `<div class="shi${i===sh.i?' on':''}" id="shi${i}" onclick="shSel(${i},true)"><div class="shen">${esc(sg.en)}${b!=null?`<span class="shsc ${b>=80?'g':b>=60?'y':'r'}">${Math.round(b)}</span>`:''}</div><div class="shvi" id="shv${i}">${esc(sg.vi||'')}</div></div>`;
+};
+function shOpen(id){
+  const L=SH.lessons.find(x=>x.id===id);if(!L)return;
+  shLeave();sh.L=L;sh.i=Math.min(L.idx||0,L.segs.length-1);sh.recs={};sh.res={};sh.msg='';sh.err='';sh.set=false;
+  if(tab!=='sh')tab='sh';render();window.scrollTo(0,0);
+}
+function shClose(){shLeave();sh.L=null;render()}
+function shAfter(){
+  if(!sh.L)return;
+  shPaintAll();shMount();
+  const el=$('#shi'+sh.i);if(el)el.scrollIntoView({block:'center'});
+}
+function shLeave(){
+  sh.tok++;clearInterval(sh.w);
+  if(sh.rec){sh.cancel=true;try{sh.mr.stop()}catch(e){}}
+  if(sh.aud){try{sh.aud.pause()}catch(e){}sh.aud=null}
+  if(sh.pl){try{sh.pl.destroy()}catch(e){}}
+  sh.pl=null;sh.ready=false;sh.playing=false;
+  Object.values(sh.recs).forEach(r=>{try{URL.revokeObjectURL(r.url)}catch(e){}});
+}
+/* trình phát YouTube */
+let ytP=null;
+function ytLoad(){
+  if(window.YT&&YT.Player)return Promise.resolve();
+  if(ytP)return ytP;
+  ytP=new Promise((ok,no)=>{
+    const s=document.createElement('script');s.src='https://www.youtube.com/iframe_api';s.async=true;
+    s.onerror=()=>{ytP=null;s.remove();no(new Error('Không tải được trình phát YouTube. Kiểm tra kết nối mạng.'))};
+    const prev=window.onYouTubeIframeAPIReady;window.onYouTubeIframeAPIReady=()=>{prev&&prev();ok()};
+    document.head.appendChild(s);
+    setTimeout(()=>{if(!(window.YT&&YT.Player)){ytP=null;no(new Error('Quá thời gian tải trình phát YouTube.'))}},12000);
+  });
+  return ytP;
+}
+function shMount(){
+  const L=sh.L;if(!L)return;
+  try{if(sh.pl&&sh.pl.getIframe&&document.body.contains(sh.pl.getIframe()))return}catch(e){}
+  if(!$('#shyt'))return;
+  if(sh.pl){try{sh.pl.destroy()}catch(e){}sh.pl=null}sh.ready=false;
+  ytLoad().then(()=>{
+    const el=$('#shyt');if(!el||sh.L!==L)return;
+    sh.pl=new YT.Player(el,{videoId:L.vid,playerVars:{playsinline:1,rel:0,controls:0,disablekb:1,modestbranding:1,iv_load_policy:3,cc_load_policy:0,fs:0},
+      events:{
+        onReady:()=>{sh.ready=true;try{sh.pl.cueVideoById({videoId:L.vid,startSeconds:L.segs[sh.i].s/1000})}catch(e){}},
+        onStateChange:e=>{sh.playing=e.data===1;shPaintCtl()},
+        onError:()=>{sh.err='Video này không cho phát nhúng hoặc không còn khả dụng.';shPaintErr()}
+      }});
+  }).catch(e=>{sh.err=e.message;shPaintErr()});
+}
+/* phát một câu: seek -> phát -> dừng đúng cuối câu -> lặp theo số lần chọn */
+function shClearW(){sh.tok++;clearInterval(sh.w);sh.w=null}
+function shPlay(i){
+  if(i!=null&&i!==sh.i)shSel(i,false);
+  if(!sh.ready){sh.err='Trình phát đang tải, hãy thử lại sau giây lát.';shPaintErr();return}
+  shStopRec(true);shStopAud();sh.err='';shPaintErr();sh.k=0;shRun();
+}
+function shRun(){
+  const sg=sh.L.segs[sh.i],p=sh.pl,tok=(sh.tok=sh.tok+1),t0=Date.now();clearInterval(sh.w);
+  try{p.setPlaybackRate(shSnap(sh.speed));p.seekTo(sg.s/1000,true);p.playVideo()}catch(e){return}
+  let seen=false;const maxMs=(sg.e-sg.s)/Math.max(sh.speed,.25)+3000;
+  sh.w=setInterval(()=>{
+    if(tok!==sh.tok){clearInterval(sh.w);return}
+    let t;try{t=p.getCurrentTime()*1000}catch(e){return}
+    if(!seen){if(t>=sg.s-400&&t<sg.e)seen=true;else if(Date.now()-t0<maxMs)return}
+    if(t+60>=sg.e||Date.now()-t0>maxMs){
+      clearInterval(sh.w);try{p.pauseVideo()}catch(e){}
+      sh.k++;
+      if(sh.k<sh.rep)setTimeout(()=>{if(tok===sh.tok)shRun()},300);
+      else{sh.playing=false;shPaintCtl();if(sh.auto)setTimeout(()=>{if(tok===sh.tok)shRecStart(true)},200)}
+    }
+  },80);
+}
+function shStopPlay(){shClearW();try{sh.pl&&sh.pl.pauseVideo()}catch(e){}sh.playing=false;shPaintCtl()}
+function shToggle(){if(sh.playing)shStopPlay();else shPlay()}
+function shSel(i,play){
+  const L=sh.L;if(!L||i<0||i>=L.segs.length)return;
+  const same=i===sh.i;
+  shStopRec(true);shStopAud();if(!same||!play)shStopPlay();
+  sh.i=i;L.idx=i;shSave();sh.msg='';
+  shPaintAll();const el=$('#shi'+i);if(el)el.scrollIntoView({block:'center',behavior:'smooth'});
+  if(play)shPlay();
+  else if(sh.ready){try{sh.pl.seekTo(L.segs[i].s/1000,true);sh.pl.pauseVideo()}catch(e){}}
+}
+const shGo=d=>shSel(sh.i+d,true);
+
+/* ---- ghi âm + chấm ---- */
+function shStopAud(){if(sh.aud){try{sh.aud.pause()}catch(e){}sh.aud=null}}
+function shStopRec(cancel){if(sh.rec){if(cancel)sh.cancel=true;try{sh.mr.stop()}catch(e){}}}
+async function shRecToggle(){if(sh.rec){shStopRec(false);return}shRecStart(false)}
+async function shRecStart(auto){
+  if(sh.rec||sh.scoring)return;
+  shStopPlay();shStopAud();
+  const i=sh.i,sg=sh.L.segs[i];
+  try{
+    const st=await navigator.mediaDevices.getUserMedia({audio:true}),ch=[];
+    const mt=['audio/webm;codecs=opus','audio/webm','audio/mp4'].find(t=>window.MediaRecorder&&MediaRecorder.isTypeSupported(t))||'';
+    const mr=sh.mr=new MediaRecorder(st,mt?{mimeType:mt}:{});
+    mr.ondataavailable=e=>{if(e.data.size)ch.push(e.data)};
+    mr.onstop=()=>{
+      st.getTracks().forEach(t=>t.stop());clearTimeout(sh.rto);sh.rec=false;
+      if(sh.cancel){sh.cancel=false;shPaintRec();return}
+      const blob=new Blob(ch,{type:mr.mimeType||mt||'audio/webm'});
+      if(sh.recs[i])try{URL.revokeObjectURL(sh.recs[i].url)}catch(e){}
+      sh.recs[i]={blob,url:URL.createObjectURL(blob)};delete sh.res[i];sh.msg='';
+      shPaintRec();
+      if(AU)shScore(i,blob);
+    };
+    mr.start();sh.rec=true;sh.msg='';sh.cancel=false;
+    sh.rto=setTimeout(()=>{if(mr.state==='recording')mr.stop()},Math.min(40000,(sg.e-sg.s)/Math.max(sh.speed,.25)*1.25+2500));
+    shPaintRec();
+  }catch(e){sh.msg='Không mở được micro. Hãy cho phép quyền micro (trang phải chạy bằng HTTPS).';shPaintRec()}
+}
+async function shScore(i,blob){
+  const L=sh.L,sg=L.segs[i];sh.scoring=true;sh.ahead=null;sh.msg='';shPaintRec();
+  const fd=new FormData();fd.append('file',blob,'s.'+(blob.type.includes('mp4')?'m4a':'webm'));fd.append('text',sg.en);
+  try{
+    const job=await api('/assess/sentence',{method:'POST',body:fd});
+    let r=null;
+    for(let n=0,nf=0;n<90&&!r;n++){
+      await new Promise(o=>setTimeout(o,1500));if(sh.L!==L)return;
+      let q;try{q=await api('/assess/'+job.job_id);nf=0}catch(e){if(e.net&&++nf<6)continue;throw e}
+      if(q.status==='done')r=q.result;
+      else if(q.status==='error')throw new Error(q.error||'Chấm thất bại');
+      else if(q.ahead!==sh.ahead){sh.ahead=q.ahead;if(sh.i===i)shPaintRec()}
+    }
+    if(!r)throw new Error('quá thời gian chờ');
+    sh.res[i]=r;if(L.best[i]==null||r.score>L.best[i]){L.best[i]=r.score;shSave();const el=$('#shi'+i);if(el)el.outerHTML=shItem(sg,i)}
+  }catch(e){if(!e.auth)sh.msg='Không chấm được: '+e.message}
+  sh.scoring=false;if(sh.L===L)shPaintRec();
+}
+function shPlayMine(){
+  const r=sh.recs[sh.i];if(!r)return;shStopPlay();shStopAud();
+  sh.aud=new Audio(r.url);sh.aud.play().catch(()=>{});
+}
+
+/* ---- dịch từng câu khi YouTube không có bản dịch ---- */
+async function shNeedTr(){
+  if(!sh.tr||sh.trBusy||sh.trOff||!sh.L)return;
+  const L=sh.L;sh.trBusy=true;
+  try{
+    for(let j=Math.max(0,sh.i-1);j<Math.min(L.segs.length,sh.i+4);j++){
+      const sg=L.segs[j];if(sg.vi||sg.vx)continue;
+      let v=await tr(sg.en);
+      if(/MYMEMORY WARNING|QUERY LENGTH LIMIT/i.test(v)){sh.trOff=true;break}
+      sg.vi=v;if(!v)sg.vx=1;
+      const el=$('#shv'+j);if(el&&sh.L===L)el.textContent=v;
+      if(sh.L!==L)break;
+    }
+    shSave();
+  }catch(e){}
+  sh.trBusy=false;
+}
+
+/* ---- vẽ lại từng phần (không render() lại cả trang, để trình phát không bị hủy) ---- */
+function shPaintAll(){
+  const L=sh.L;if(!L)return;
+  shPaintTop();shPaintCtl();shPaintRec();shPaintErr();shPaintPop();
+  document.querySelectorAll('#shlist .shi.on').forEach(e=>e.classList.remove('on'));
+  const el=$('#shi'+sh.i);if(el)el.classList.add('on');
+  shNeedTr();
+}
+function shPaintTop(){
+  const L=sh.L;if(!L)return;
+  const c=$('#shcnt');if(c)c.textContent=`Câu ${sh.i+1} / ${L.segs.length}`;
+  const b=$('#shtrb');if(b)b.classList.toggle('on',sh.tr);
+  const l=$('#shlist');if(l)l.classList.toggle('notr',!sh.tr);
+  const s=$('#shspt');if(s)s.textContent=`${shFmt(sh.speed)}× · ×${sh.rep}`;
+  const o=$('#shov');if(o)o.innerHTML=`<span>${esc(L.segs[sh.i].en)}</span>`;
+}
+function shPaintCtl(){
+  const e=$('#shctl');if(!e)return;
+  e.innerHTML=`<button class="shcb" onclick="shGo(-1)" aria-label="Câu trước" ${sh.i<=0?'disabled':''}>${ic('chevup',20)}</button>
+  <button class="shcb big" onclick="shToggle()" aria-label="${sh.playing?'Dừng':'Nghe câu này'}">${ic(sh.playing?'stop':'play',22)}</button>
+  <button class="shcb${sh.rec?' rec':''}" style="${sh.rec?'color:#fff;border:0':''}" onclick="shRecToggle()" ${sh.scoring?'disabled':''} aria-label="${sh.rec?'Dừng ghi âm':'Ghi âm nhại theo'}">${ic(sh.rec?'stop':'mic',20)}</button>
+  <button class="shcb" onclick="shGo(1)" aria-label="Câu sau" ${sh.i>=sh.L.segs.length-1?'disabled':''}>${ic('down',20)}</button>`;
+}
+function shPaintErr(){const e=$('#sherr');if(e)e.innerHTML=sh.err?`<div class="sherr">${esc(sh.err)}</div>`:''}
+function shPaintRec(){
+  const e=$('#shrec');if(!e)return;shPaintCtl();
+  const i=sh.i,r=sh.recs[i],res=sh.res[i];let h='';
+  if(sh.rec)h=`<div class="shrb"><span class="shdot"></span>Đang ghi âm… đọc nhại theo câu vừa nghe. Nhấn nút vuông để dừng.</div>`;
+  else if(sh.scoring)h=`<div class="shrb">Đang chấm phát âm…${sh.ahead?` (còn ${sh.ahead} bài phía trước)`:''}</div>`;
+  else{
+    if(r)h+=`<div class="shrb"><button class="lnk" onclick="shPlayMine()">${ic('play',13)} Nghe bản ghi của bạn</button><button class="lnk" onclick="shPlay()">${ic('vol',14)} Nghe mẫu</button></div>`;
+    else h+=`<div class="shrb mut">Nghe câu rồi bấm micro để đọc nhại. ${AU?'':'Đăng nhập ở tab Speaking để được chấm điểm.'}</div>`;
+    if(r&&!AU)h+=`<div class="shrb mut">Đăng nhập ở tab Speaking để chấm điểm phát âm; bạn vẫn có thể tự so sánh bằng cách nghe lại.</div>`;
+    if(res){
+      const cls=res.score>=80?'g':res.score>=60?'y':'r';
+      h+=`<div class="shres"><div class="shscore ${cls}">${Math.round(res.score)}<small>/100</small></div><div class="shwd">${res.words.map((w,k)=>`<b class="${w.sev==null?'o':'s'+w.sev}" onclick="speak(this.dataset.w)" data-w="${esc(w.w.replace(/[^A-Za-z']/g,''))}">${esc(w.w)}</b>`).join(' ')}</div>
+      <p class="mut" style="font-size:11.5px;margin:8px 0 0">${res.ok?'Phát âm tốt!':'Từ màu đỏ/vàng cần luyện thêm — chạm vào từ để nghe mẫu.'}</p></div>`;
+    }
+  }
+  if(sh.msg)h+=`<p class="err" style="margin:6px 16px 0">${esc(sh.msg)}</p>`;
+  e.innerHTML=h;
+}
+function shPaintPop(){
+  const e=$('#shpop');if(!e)return;
+  if(!sh.set){e.innerHTML='';return}
+  const sg=(arr,cur,fn,fmt)=>`<div class="seg in">${arr.map(v=>`<button class="${v===cur?'on':''}" onclick="${fn}(${v})">${fmt(v)}</button>`).join('')}</div>`;
+  e.innerHTML=`<div class="ov" onclick="if(event.target===this){sh.set=false;shPaintPop()}"><div class="mdl" style="text-align:left" role="dialog" aria-modal="true" aria-label="Tốc độ và lặp">
+  <button class="xb mx" onclick="sh.set=false;shPaintPop()" aria-label="Đóng">${ic('x',18)}</button>
+  <b style="font-size:15px">Cài đặt luyện tập</b>
+  <div class="fl" style="margin:14px 0 6px">Tốc độ phát</div>${sg(SH_SPEEDS,sh.speed,'shSetSpeed',v=>shFmt(v)+'×')}
+  <div class="fl" style="margin:14px 0 6px">Số lần lặp mỗi câu</div>${sg(SH_REPS,sh.rep,'shSetRep',v=>'×'+v)}
+  <label class="shsw"><span>Tự ghi âm sau khi nghe xong<small class="mut">Nghe → nhại theo ngay, không cần bấm micro</small></span><input type="checkbox" ${sh.auto?'checked':''} onchange="sh.auto=this.checked;shCfgSave()"></label>
+  <label class="shsw"><span>Hiện bản dịch tiếng Việt</span><input type="checkbox" ${sh.tr?'checked':''} onchange="sh.tr=this.checked;shCfgSave();shPaintTop();shNeedTr()"></label>
+  </div></div>`;
+}
+const shSetSpeed=v=>{sh.speed=v;shCfgSave();shPaintTop();shPaintPop()};
+const shSetRep=v=>{sh.rep=v;shCfgSave();shPaintTop();shPaintPop()};
+/* phím tắt trên máy tính: Space nghe, ↑/↓ đổi câu, R ghi âm */
+addEventListener('keydown',e=>{
+  if(tab!=='sh'||!sh.L||sh.set||e.ctrlKey||e.metaKey||e.altKey)return;
+  const t=(e.target&&e.target.tagName)||'';if(/INPUT|TEXTAREA|SELECT|BUTTON/.test(t))return;
+  if(e.key===' '){e.preventDefault();shToggle()}
+  else if(e.key==='ArrowDown'){e.preventDefault();shGo(1)}
+  else if(e.key==='ArrowUp'){e.preventDefault();shGo(-1)}
+  else if(e.key==='r'||e.key==='R'){e.preventDefault();shRecToggle()}
+});
+
 render();
 if("serviceWorker" in navigator)addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));
 </script>
